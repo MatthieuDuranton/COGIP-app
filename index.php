@@ -1,9 +1,8 @@
 <?php
+session_start();
 
-require("models/index.php");
-
-if (isset($_GET["action"])){
-    if($_GET["action"]=='nomDeLaFonction'){
-        nomDeLaFonction();
-    }
+if(isset($_GET['action']) && !empty($_GET['action']) && is_file('controllers/'.$_GET['action'].'.php')){
+    require('controllers/'.$_GET['page'].'.php');
+} else {
+	require('controllers/index.php');
 }
