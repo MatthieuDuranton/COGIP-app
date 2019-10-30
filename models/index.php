@@ -27,8 +27,8 @@ function connection($username, $password){
         $req = $db->prepare('SELECT * FROM user WHERE username = :username');//try to connect to DB thanks to the username
         $req->execute(array('username' => $username));
         $res = $req->fetch();
-        if ($password == $res["password"]);//tant que le mot de passe n'est pas sécurisé
-        //if(password_verify($password, $res["password"])){//check if password is valid
+        if ($password == $res["password"]);//check if password is valid ; to use as long as the password is not secured
+        //if(password_verify($password, $res["password"])){//check if password is valid ; to use once password is secured
             $_SESSION["username"] = $res["username"];//if true : Link the user's infos to the session
             $_SESSION['firstname'] = $res["firstname"];
             $_SESSION['lastname'] = $res["lastname"];
