@@ -12,14 +12,14 @@ connection($username,$password);
             <?php echo $username_empty ?>
         </div>
     </div>
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="firstname">Password :</label>
-                <input type="text" class="form-control" name="password" placeholder="ex: Jean">
-                <?php echo $password_empty ?>
-            </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="firstname">Password :</label>
+            <input type="text" class="form-control" name="password" placeholder="ex: Jean">
+            <?php echo $password_empty ?>
         </div>
-        <div class="form-group text-center">
-            <input type="submit" name="send">
-        </div>
+    </div>
+    <div class="form-group text-center">
+        <input type="submit" name="send">
+    </div>
 </form>
