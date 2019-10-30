@@ -1,6 +1,6 @@
 <?php
 //Check username & password. Fetch user informations for connection
-  
+
 function connection($username, $password){
     if ($_SERVER['REQUEST_METHOD']=="POST"){ 
         if (empty($username = htmlspecialchars(strip_tags($username)))) {//$username = $_POST['username'] ; check if the input username is filled

@@ -1,21 +1,20 @@
 <?php 
 $username_empty = $password_empty = $username_err = $session_err = "";
-$username = $_POST[$username];
-$password = $_POST[$password];
-connection($username,$password);
+
+connection($_POST["username"],$_POST["password"]);
 ?>
 <form method="post" action="">
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="firstname">Username :</label>
+            <label for="username">Nom d'utilisateur :</label>
             <input type="text" class="form-control" name="username" placeholder="ex: Jean">
             <?php echo $username_empty; ?>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="firstname">Password :</label>
-            <input type="text" class="form-control" name="password" placeholder="ex: Jean">
+            <label for="password">Mot de passe :</label>
+            <input type="password" class="form-control" name="password" placeholder="ex: Jean">
             <?php echo $password_empty; ?>
         </div>
     </div>
