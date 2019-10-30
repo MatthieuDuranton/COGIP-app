@@ -1,23 +1,16 @@
-<?php
-$username_empty = $password_empty = $username_err = $session_err = "";
-
-$username = $_POST['username'] ?? NULL;
-$password = $_POST['password'] ?? NULL;
-connection($username,$password);
-?>
 <form method="post" action="">
     <div class="row">
         <div class="form-group col-md-6">
             <label for="username">Nom d'utilisateur :</label>
             <input type="text" class="form-control" name="username" placeholder="ex: Jean">
-            <?php echo $username_empty; ?>
+            <?= $username_empty; ?>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-6">
             <label for="password">Mot de passe :</label>
             <input type="password" class="form-control" name="password" placeholder="ex: Jean">
-            <?php echo $password_empty; ?>
+            <?= $password_empty; ?>
         </div>
     </div>
     <div class="form-group text-center">
