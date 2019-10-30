@@ -2,6 +2,7 @@
 //Check username & password. Fetch user informations for connection
 
 function connection($username, $password){
+    include("lib/inc.php");
     if ($_SERVER['REQUEST_METHOD']=="POST"){ 
         if (empty($username = htmlspecialchars(strip_tags($username)))) {//$username = $_POST['username'] ; check if the input username is filled
             $username_empty = "Bonjour, vous devez indiquer un nom d'utilisateur";
@@ -34,7 +35,7 @@ function connection($username, $password){
             $_SESSION['lastname'] = $res["lastname"];
             $_SESSION['fk_role'] = $res["fk_role"];
 
-            header("location:/?action=dashboard");//if true : moves user to the dashboard
+            header("location:?action=dashboard");//if true : moves user to the dashboard
 
         }else{
             $session_err = "Désolé, le nom d'utilisateur et le mot de passe ne correspondent pas";
