@@ -1,7 +1,9 @@
-<?php 
+<?php
 $username_empty = $password_empty = $username_err = $session_err = "";
 
-connection($_POST["username"],$_POST["password"]);
+$username = $_POST['username'] ?? NULL;
+$password = $_POST['password'] ?? NULL;
+connection($username,$password);
 ?>
 <form method="post" action="">
     <div class="row">
