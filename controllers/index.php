@@ -1,6 +1,9 @@
 <?php
 
 	require('models/index.php');
+
+	$username = $_POST['username'] ?? NULL;
+	$password = $_POST['password'] ?? NULL;
 	connection($username, $password);
 
 	$title = "Login";
