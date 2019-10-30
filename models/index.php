@@ -18,7 +18,7 @@ function connection($username, $password){
         $sth = $db->prepare('SELECT COUNT(*) as nb FROM user WHERE username = :username');//try to retrieve the username txs to $username
         $sth->execute(array('username' => $username));
         $row = $sth -> fetch();
-        if($row["nb"] = 0){
+        if($row["nb"] == 0){
             $username_err = "Désolé, ce nom d'utilisateur n'est pas reconnu";
         }else{
             NULL;
