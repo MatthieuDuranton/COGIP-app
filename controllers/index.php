@@ -1,3 +1,4 @@
 <?php
-	require("../models/index.php");
-	require("../views/index.php");
+	require('../models/index.php');
+	$title = "Login";
+	require('../views/index.php');
