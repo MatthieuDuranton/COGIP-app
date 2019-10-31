@@ -2,7 +2,7 @@
 //Check username & password. Fetch user informations for connection
 function connection($username, $password){
 	global $db;
-	
+
     if ($_SERVER['REQUEST_METHOD']=="POST"){
 		$username = htmlspecialchars(strip_tags($username));
 		$password = trim($password);
@@ -35,6 +35,7 @@ function connection($username, $password){
                 $_SESSION['firstname'] = $res['firstname'];
                 $_SESSION['lastname'] = $res['lastname'];
                 $_SESSION['fk_role'] = $res['fk_role'];
+				$_SESSION['logged'] = true;
 
                 header("location:?action=dashboard");//if true : moves user to the dashboard
 

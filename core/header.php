@@ -12,9 +12,14 @@
 <main class="container">
 	<header>
 		<h1>COGIP APP</h1>
-		<nav>
-			<li>
-				<a href="?action=dashboard">Tableau de bord</a>
+<?php if($_SESSION['logged']){ ?>
+		<ul class="nav justify-content-center">
+			<li class="nav-item">
+				<a class="nav-link" href="?action=dashboard">Tableau de bord</a>
 			</li>
-		</nav>
+			<li class="nav-item">
+				<a class="nav-link" href="?action=logout">Déconnexion</a>
+			</li>
+		</ul>
+<?php } ?>
 	</header>
