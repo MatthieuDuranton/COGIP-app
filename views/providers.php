@@ -4,23 +4,29 @@
     </div>
 </div>
 
-<div class = "row text-center mt-4">
-    <div class="col-12">
-        <div class = text-center>
-            <h4>Fournisseurs</h4>
+<form method="POST" action=''>
+    <div class = "row text-center mt-4">
+        <div class="col-12">
+            <?php if($role == 1 OR 2){?>
+            <div class = text-center>
+                <h4>Fournisseurs</h4>
+            </div>
+            <?php } ?>
+            <div class = text-center>
+                <h5><a href="">Ajouter un Fournisseur</a></h5>
+            </div>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>N° de TVA</th>
+                    <th>Nationalité</th>
+                    <?php if($role == 1){?>
+                    <th>Modifier</th>
+                    <th>Effacer</th>
+                    <?php } ?>
+                </tr>
+                <?php providers(); ?>
+            </table>
         </div>
-        <div class = text-center>
-            <h5><a href="">Ajouter un Fournisseur</a></h5>
-        </div>
-        <table>
-            <tr>
-                <th>Nom</th>
-                <th>N° de TVA</th>
-                <th>Nationalité</th>
-                <th>Modifier</th>
-                <th>Effacer</th>
-            </tr>
-            <?=lastContact();?>
-        </table>
     </div>
-</div>
+</form>

@@ -14,8 +14,7 @@
                     <th>Nom</th>
                     <th>N° de TVA</th>
                     <th>Nationalité</th>
-                    <th>Modifier</th>
-                    <th>Effacer</th>
+                    <th>Type de relations</th>
                 </tr>
                 <tr>
                     <th>
@@ -31,11 +30,15 @@
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="name_company" value = <?php echo "$name_company"?>>
+                        <input class="form-control" type="text" name="role" value = <?php echo "role"?>>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                 </tr>
             </table>
         </div>
+    </div>
+    
+    <div class = "col-12 text-center mt-2">
+        <input type="submit" value="submit">
     </div>
 </form>
