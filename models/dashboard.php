@@ -15,7 +15,7 @@ function lastContact(){
 
     global $db;
 
-    $contact = $db->query('SELECT firstname, lastname, email, fk_company FROM people ORDER BY DESC LIMIT 5');
+    $contact = $db->query('SELECT firstname, lastname, email, fk_company FROM people ORDER BY id_people DESC LIMIT 5');
     $donneeContact = $contact->fetch();
 
     while($donneeContact = $contact ->fetch()){
