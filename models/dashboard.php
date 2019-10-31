@@ -6,12 +6,12 @@ function welcome($username){
 
     $user_Fname = $_SESSION['firstname'];
     $user_Lname = $_SESSION['lastname'];
-    $user_rights = $_SESSION['fk_role'];  
+    $user_rights = $_SESSION['fk_role'];
 
     echo "bienvenue".$user_Fname." ".$user_Lname;
 
 }
-// requetes vers bd => 5 derniers contacts 
+// requetes vers bd => 5 derniers contacts
 
 function lastContact(){
 
@@ -38,13 +38,14 @@ function lastInvoice(){
 
     global $db;
 
-    $resultInvoice = $db->query('SELECT fk_company, fk_people, invoice_date FROM invoice ORDER BY id_invoice DESC LIMIT 5');
+    $resultInvoice = $db->query('SELECT fk_company, fk_people, invoice_date, reference FROM invoice ORDER BY id_invoice DESC LIMIT 5');
     $donneeInvoice = $resultInvoice->fetch();
 
     while($donneeInvoice = $resultInvoice ->fetch()){
 
     ?>
 	<tr>
+		<td><? echo $donneeInvoice["reference"]; ?></td>
         <td><? echo $donneeInvoice["fk_company"]; ?></td>
         <td><? echo $donneeInvoice["fk_people"]; ?></td>
         <td><? echo $donneeInvoice["invoice_date"]; ?></td>
@@ -58,7 +59,7 @@ function lastCompany(){
 
     global $db;
 
-    $resultCompany = $db->query('SELECT company_name, vat, email, fk_company FROM company ORDER BY id_company DESC LIMIT 5');
+    $resultCompany = $db->query('SELECT company_name, vat, fk_country, fk_type FROM company ORDER BY id_company DESC LIMIT 5');
     $donneeCompany = $resultCompany->fetch();
 
     while($donneeCompany = $resultCompany ->fetch()){
@@ -67,7 +68,8 @@ function lastCompany(){
 	<tr>
         <td><? echo $donneeCompany["company_name"]; ?></td>
         <td><? echo $donneeCompany["vat"]; ?></td>
-        <td><? echo $donneeCompany["fk_company"]; ?></td>
+		<td><? echo $donneeCompany["fk_country"]; ?></td>
+        <td><? echo $donneeCompany["fk_type"]; ?></td>
       </tr>
     <?php
     }
