@@ -53,7 +53,7 @@
 
 <div class = "row text-center mt-4">
     <div class="col-6">
-        <h4><a href="providers.php">Voir tous les fournisseurs</a></h4>
+        <h4><a href="?action=providers">Voir tous les fournisseurs</a></h4>
     </div>
     <div class="col-6">
         <h4><a href="?action=clients">Voir tous les clients</a></h4>
