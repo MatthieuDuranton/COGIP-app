@@ -17,10 +17,10 @@
             <?php } ?>
             <table>
                 <tr>
-                    <th>Référence</th>
-                    <th>Société</th>
-                    <th>Date d'émission</th>
-                    <th>Personne de contact</th>
+                    <th>Nom</th>
+                    <th>N° de TVA</th>
+                    <th>Nationalité</th>
+                    <th>Type de relations</th>
                     <?php if($role == 1){?>
                     <th>Modifier</th>
                     <th>Effacer</th>
