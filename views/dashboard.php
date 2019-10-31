@@ -1,6 +1,6 @@
 <div class="row">
     <div class="form-group col-md-6">
-        <h1>Bienvenue <?= $user_Fname; ?> <?= $user_Lname; ?>, vous êtes connecté en tant que <?= $rights; ?></h1>
+        <h2><?php welcome(); ?></h2>
     </div>
 </div>
 
@@ -31,7 +31,7 @@
                 <th>Date d'émission'</th>
                 <th>Personne de contact</th>
             </tr>
-
+            <?=lastInvoice();?>
         </table>
     </div>
 
@@ -46,7 +46,7 @@
                 <th>Nationalité</th>
                 <th>Type de relations</th>
             </tr>
-
+            <?=lastCompany();?>
         </table>
     </div>
 </div>

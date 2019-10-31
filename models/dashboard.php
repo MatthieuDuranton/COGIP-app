@@ -1,6 +1,5 @@
 <?php
-function welcome($username){
-    global $db;
+function welcome(){
 
     global $user_Fname, $user_Lname, $user_rights, $rights;
 
