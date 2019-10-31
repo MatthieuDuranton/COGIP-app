@@ -30,12 +30,16 @@
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="role" value = <?php echo "role"?>>
+                        <input class="form-control" type="text" name="role" value = <?php echo "$role"?>>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                 </tr>
             </table>
         </div>
+    </div>
+
+    <div class="col-12 text-center mt-2">
+        <p><?= $send_success; ?></p>
     </div>
     
     <div class = "col-12 text-center mt-2">
