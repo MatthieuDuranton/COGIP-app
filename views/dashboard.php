@@ -16,7 +16,7 @@
                 <th>Email</th>
                 <th>Société(s)</th>
             </tr>
-            <?=lastContact();?>
+            <?php lastContact(); ?>
         </table>
     </div>
 
@@ -28,10 +28,10 @@
             <tr>
                 <th>Référence</th>
                 <th>Société</th>
-                <th>Date d'émission'</th>
+                <th>Date d'émission</th>
                 <th>Personne de contact</th>
             </tr>
-            <?=lastInvoice();?>
+            <?php lastInvoice(); ?>
         </table>
     </div>
 
@@ -46,7 +46,7 @@
                 <th>Nationalité</th>
                 <th>Type de relations</th>
             </tr>
-            <?=lastCompany();?>
+            <?php lastCompany(); ?>
         </table>
     </div>
 </div>
