@@ -12,7 +12,7 @@
 <main class="container">
 	<header>
 		<h1>COGIP APP</h1>
-<?php if($_SESSION['logged']){ ?>
+<?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){ ?>
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
 				<a class="nav-link" href="?action=dashboard">Tableau de bord</a>
