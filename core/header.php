@@ -9,3 +9,12 @@
 	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+<main class="container">
+	<header>
+		<h1>COGIP APP</h1>
+		<nav>
+			<li>
+				<a href="?action=dashboard">Tableau de bord</a>
+			</li>
+		</nav>
+	</header>
