@@ -6,7 +6,7 @@ $role = $_SESSION['fk_role'];//
 function invoices(){
     global $db;
 
-    $invoices = $db->query('SELECT * FROM invoice WHERE fk_type = 2');
+    $invoices = $db->query('SELECT * FROM invoice');
 
     while ($donneeInvoices = $invoices->fetch()){
     ?>
