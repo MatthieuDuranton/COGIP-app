@@ -13,19 +13,21 @@
                 </tr>
                 <tr>
                     <th>
-                        <input class="form-control" type="text" name="name_company" value = <?php echo "$name_company"?>>
+                        <input class="form-control" type="text" name="name_company" value = <?php echo $name_company?>>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="tva" value = <?php echo "$tva"?>>
+                        <input class="form-control" type="text" name="tva" value = <?php echo $tva?>>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="nationalité" value = <?php echo "$nationalité"?>>
+                        <input class="form-control" type="text" name="nationalité" value = <?php echo $nationalité?>>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="role" value = <?php echo "$role"?>>
+                        <select name="role" class="form-control" >
+                            <?php fkOption("type","id_type, typename");?>
+                        </select>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                 </tr>
