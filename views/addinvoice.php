@@ -13,20 +13,20 @@
                 </tr>
                 <tr>
                     <th>
-                        <input class="form-control" type="text" name="reference" value = <?php echo "$reference"?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <input class="form-control" type="text" name="reference" value = <?php echo "$ref"?>>
+                        <span> <?php echo $ref_Err;?></span>
                     </th>
                     <th>
                         <input class="form-control" type="text" name="company" value = <?php echo "$company"?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <span> <?php echo $company_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="emissiondate" value = <?php echo "$emissiondate"?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <input class="form-control" type="text" name="emissiondate" value = <?php echo "$date"?>>
+                        <span> <?php echo $date_Err;?></span>
                     </th>
                     <th>
                         <input class="form-control" type="text" name="contact" value = <?php echo "$contact"?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <span> <?php echo $contact_Err;?></span>
                     </th>
                 </tr>
             </table>
