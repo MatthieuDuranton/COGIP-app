@@ -14,19 +14,19 @@
                 <tr>
                     <th>
                         <input class="form-control" type="text" name="fname" value = <?php echo $fname?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <span> <?php echo $fname_Err;?></span>
                     </th>
                     <th>
                         <input class="form-control" type="text" name="lname" value = <?php echo $lname?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <span> <?php echo $lname_Err;?></span>
                     </th>
                     <th>
                         <input class="form-control" type="email" name="email" value = <?php echo $email?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <span> <?php echo $email_Err;?></span>
                     </th>
                     <th>
                         <input class="form-control" type="text" name="company" value = <?php echo $company?>>
-                        <span> <?php echo $notfill_Err;?></span>
+                        <span> <?php echo $company_Err;?></span>
                     </th>
                 </tr>
             </table>
