@@ -6,7 +6,7 @@ $role = $_SESSION['fk_role'];//
 function people(){
     global $db;
 
-    $people = $db->query('SELECT * FROM people WHERE fk_type = 2');
+    $people = $db->query('SELECT * FROM people');
 
     while ($donneePeople = $people->fetch()){
     ?>
