@@ -18,7 +18,7 @@
                 $email_Err = "Merci d'indiquer une nationalité valide";
             };
             if (empty($role = htmlspecialchars(strip_tags($_POST['role'])))) {
-                $notfill_Err = "Merci de remplir ce champ";
+                $notfill_Err = "Merci de choisir un champ";
             };
         
        
