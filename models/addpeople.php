@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     };
 
     if ($notfill_Err == "" AND $email_Err == ""){
-        $req = $db->prepare ("INSERT INTO people (firstame, lastname, email, fk_company)
+        $req = $db->prepare ("INSERT INTO people (firstname, lastname, email, fk_company)
         VALUES (:firstname, :lastname, :email, :fk_company)");
         $req->execute(array(
             'firstname' => $fname,
