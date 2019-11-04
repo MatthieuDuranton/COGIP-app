@@ -2,7 +2,6 @@
 session_start();
 
 require('lib/inc.php');
-require('core/functions.php');
 
 	if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 		if(isset($_GET['action']) && !empty($_GET['action']) && is_file('controllers/'.$_GET['action'].'.php')){
