@@ -28,7 +28,7 @@
                     </th>
                     <th>
                         <select class="form-control" name="contact"?>
-                        <?php fkOption('people', 'id_people, lastname');?>
+                        <?php fkOption('people', 'id_people, firstname, lastname');?>
                         </select>
                         <span> <?php echo $contact_Err;?></span>
                     </th>
