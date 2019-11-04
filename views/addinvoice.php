@@ -17,7 +17,9 @@
                         <span> <?php echo $ref_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="company" value = <?php echo "$company"?>>
+                        <select class="form-control" name="company">
+                        <?php fkOption('company', 'id_company, company_name');?>
+                        </select>
                         <span> <?php echo $company_Err;?></span>
                     </th>
                     <th>
@@ -25,7 +27,9 @@
                         <span> <?php echo $date_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="contact" value = <?php echo "$contact"?>>
+                        <select class="form-control" name="contact"?>
+                        <?php fkOption('people', 'id_people, lastname');?>
+                        </select>
                         <span> <?php echo $contact_Err;?></span>
                     </th>
                 </tr>
