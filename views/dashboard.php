@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="form-group col-md-6">
+    <div class="col-12">
         <h2><?php welcome(); ?></h2>
     </div>
 </div>

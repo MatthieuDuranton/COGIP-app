@@ -25,7 +25,9 @@
                         <span> <?php echo $email_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="company" value = <?php echo $company?>>
+                        <select class="form-control" name="company">
+                        	<?php fkOption('company','id_company, company_name'); ?>
+                        </select>
                         <span> <?php echo $company_Err;?></span>
                     </th>
                 </tr>
@@ -36,7 +38,7 @@
     <div class="col-12 text-center mt-2">
         <p><?= $send_success; ?></p>
     </div>
-    
+
     <div class = "col-12 text-center mt-2">
         <input type="submit" value="submit">
     </div>
