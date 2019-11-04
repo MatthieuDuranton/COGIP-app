@@ -1,4 +1,5 @@
 <?php
+global $db;
 
 $notfill_Err = $email_Err = "";
 $fname = $lname = $email = $company = "";
