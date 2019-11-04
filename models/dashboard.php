@@ -25,7 +25,7 @@ function lastContact(){
         <td><?= $donneeContact["firstname"]; ?></td>
         <td><?= $donneeContact["lastname"]; ?></td>
         <td><?= $donneeContact["email"]; ?></td>
-        <td><?= $donneeContact["fk_company"]; ?></td>
+        <td><?php fkSelect("company", $donneeContact["fk_company"], "company_name"); ?></td>
       </tr>
     <?php
     }
@@ -43,9 +43,9 @@ function lastInvoice(){
     ?>
 	<tr>
 		<td><?= $donneeInvoice["reference"]; ?></td>
-        <td><?= $donneeInvoice["fk_company"]; ?></td>
-        <td><?= $donneeInvoice["fk_people"]; ?></td>
+        <td><?= fkSelect("company", $donneeInvoice["fk_company"], "company_name"); ?></td>
         <td><?= $donneeInvoice["invoice_date"]; ?></td>
+        <td><?php fkSelect("people", $donneeInvoice["fk_people"], "firstname, lastname"); ?></td>
       </tr>
     <?php
     }
@@ -64,8 +64,8 @@ function lastCompany(){
 	<tr>
         <td><?= $donneeCompany["company_name"]; ?></td>
         <td><?= $donneeCompany["vat"]; ?></td>
-		<td><?= $donneeCompany["fk_country"]; ?></td>
-        <td><?= $donneeCompany["fk_type"]; ?></td>
+		<td><?php fkSelect("country", $donneeCompany["fk_country"], "country") ?></td>
+        <td><?php fkSelect("type", $donneeCompany["fk_type"], "typename") ?></td>
       </tr>
     <?php
     }

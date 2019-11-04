@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-<main class="container">
+<main class="container-fluid">
 	<header>
 		<h1>COGIP APP</h1>
 <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){ ?>
