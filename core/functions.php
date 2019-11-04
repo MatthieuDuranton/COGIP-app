@@ -20,7 +20,7 @@
 		$result = $query->fetch();
 
 		$column = explode(", ", $column);
-		foreach ($column as $columnValue) {
+		foreach ($column as $key) {
 			echo $result[$key]." ";
 		}
 	}
@@ -29,11 +29,22 @@
 		global $db;
 	    $query = $db->query('SELECT * FROM '.$table.' ORDER BY id_'.$table);
 
-		$column = explode(", ", $column);
-		$column0 = $column[0];
-		$column1 = $column[1];
+		if($table == "people"){
+			$column = explode(", ", $column);
+			$column0 = $column[0];
+			$column1 = $column[1];
+			$column1 = $column[2];
 
-		while($result = $query->fetch(PDO::FETCH_ASSOC)){
-			echo '<option value="'.$result[$column0].'">'.$result[$column1].'</option>';
+			while($result = $query->fetch(PDO::FETCH_ASSOC)){
+				echo '<option value="'.$result[$column0].'">'.$result[$column1].' '.$result[$column2].'</option>';
+			}
+		} else {
+			$column = explode(", ", $column);
+			$column0 = $column[0];
+			$column1 = $column[1];
+
+			while($result = $query->fetch(PDO::FETCH_ASSOC)){
+				echo '<option value="'.$result[$column0].'">'.$result[$column1].'</option>';
+			}
 		}
 	}
