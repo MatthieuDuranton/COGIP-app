@@ -1,15 +1,4 @@
 <?php
-function welcome(){
-
-    global $user_Fname, $user_Lname, $user_rights, $rights;
-
-    $user_Fname = $_SESSION['firstname'];
-    $user_Lname = $_SESSION['lastname'];
-    $user_rights = $_SESSION['fk_role'];
-
-    echo "bienvenue".$user_Fname." ".$user_Lname;
-
-}
 // requetes vers bd => 5 derniers contacts
 
 function lastContact(){
@@ -71,4 +60,3 @@ function lastCompany(){
     }
     $resultCompany->closeCursor();
 }
-
