@@ -21,7 +21,7 @@
                         <span> <?php echo $company_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="emissiondate" value = <?php echo "$date"?>>
+                        <input class="form-control" type="date" name="emissiondate" value = <?php echo "$date"?>>
                         <span> <?php echo $date_Err;?></span>
                     </th>
                     <th>
