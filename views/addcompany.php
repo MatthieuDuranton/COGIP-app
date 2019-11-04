@@ -1,13 +1,8 @@
-<div class="row">
-    <div class="form-group col-md-6">
-        <h2><?php welcome(); ?></h2>
-    </div>
-</div>
 <form method="POST" action=''>
     <div class = "row text-center mt-4">
         <div class="col-12">
             <div class = text-center>
-                <h4>Ajouter un fournisseur</h4>
+                <h4>Ajouter une société</h4>
             </div>
             <table>
                 <tr>

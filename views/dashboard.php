@@ -7,7 +7,7 @@
 <div class = "row text-center mt-4">
     <div class="col-12 col-md-4">
         <div class = text-center>
-            <h4><a href="">Voir tous les contacts</a></h4>
+            <h4><a href="?action=people">Voir tous les contacts</a></h4>
         </div>
         <table>
             <tr>
@@ -22,7 +22,7 @@
 
     <div class="col-12 col-md-4">
         <div class = text-center>
-            <h4><a href="">Voir toutes les factures</a></h4>
+            <h4><a href="?action=invoices">Voir toutes les factures</a></h4>
         </div>
         <table>
             <tr>
@@ -37,7 +37,7 @@
 
     <div class="col-12 col-md-4">
         <div class = text-center>
-            <h4><a href="">Voir toutes les sociétés</a></h4>
+            <h4><a href="?action=companies">Voir toutes les sociétés</a></h4>
         </div>
         <table>
             <tr>

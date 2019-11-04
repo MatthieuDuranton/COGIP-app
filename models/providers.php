@@ -1,14 +1,14 @@
 <?php
-//définir $role pour afficher ou non l'ajout de client
+//définir $role pour afficher ou non l'ajout de provider
 $role = $_SESSION['fk_role'];//
 
-//définir fonction client pour afficher ceux de la base de donnée
+//définir fonction providers pour afficher ceux de la base de donnée
 function providers(){
     global $db;
 
     $providers = $db->query('SELECT * FROM company WHERE fk_type = 2');
 
-    while ($donneeProvider = $clients->fetch()){
+    while ($donneeProvider = $providers->fetch()){
     ?>
 	<tr>
         <td><?= $donneeProvider["company_name"]; ?></td>
