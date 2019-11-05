@@ -16,7 +16,7 @@ function companies(){
         <td><?= $donneeCompanies["vat"]; ?></td>
         <td><?= $donneeCompanies["country"]; ?></td>
         <td><?= $donneeCompanies["type"]; ?></td>
-        <?php if($role == 1){?>
+        <?php if($role == 1){ ?>
 		<td><a href="?action=edit&type=company&id=<?= $donneeCompanies["id"]; ?>"><i class="fas fa-pen"></i></a></td>
         <td><a href="?action=delete&type=company&id=<?= $donneeCompanies["id"]; ?>"><i class="fas fa-times"></i></a></td>
         <?php } ?>
