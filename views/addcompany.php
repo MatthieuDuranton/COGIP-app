@@ -21,7 +21,9 @@
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="nationalité" value = <?php echo $nationalité?>>
+                        <select class="form-control" name="nationalité">
+							<?php fkOption("country","id_country, country_name");?>
+						</select>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
@@ -38,8 +40,8 @@
     <div class="col-12 text-center mt-2">
         <p><?= $send_success; ?></p>
     </div>
-    
+
     <div class = "col-12 text-center mt-2">
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" class="btn btn-primary btn-lg">
     </div>
 </form>
