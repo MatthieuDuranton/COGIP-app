@@ -7,7 +7,7 @@ function companies(){
     $role = $_SESSION['fk_role'];
     global $db;
 
-    $companies = $db->query('SELECT company_name, vat, country.country_name AS country, type.type_name AS type FROM company INNER JOIN country ON company.fk_country = country.id_country INNER JOIN type ON company.fk_type = type.id_type ORDER BY id_company DESC');
+    $companies = $db->query('SELECT company_name, id_company AS id, vat, country.country_name AS country, type.type_name AS type FROM company INNER JOIN country ON company.fk_country = country.id_country INNER JOIN type ON company.fk_type = type.id_type ORDER BY id_company DESC');
 
     while ($donneeCompanies = $companies->fetch()){
     ?>
@@ -16,7 +16,7 @@ function companies(){
         <td><?= $donneeCompanies["vat"]; ?></td>
         <td><?= $donneeCompanies["country"]; ?></td>
         <td><?= $donneeCompanies["type"]; ?></td>
-        <?php if ($role == 1){?>
+        <?php if($role == 1){?>
 		<td><a href="?action=edit&type=company&id=<?= $donneeCompanies["id"]; ?>"><i class="fas fa-pen"></i></a></td>
         <td><a href="?action=delete&type=company&id=<?= $donneeCompanies["id"]; ?>"><i class="fas fa-times"></i></a></td>
         <?php } ?>

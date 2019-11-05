@@ -6,7 +6,7 @@ $role = $_SESSION['fk_role'];//
 function people(){
     global $db;
 
-    $people = $db->query('SELECT * FROM people');
+    $people = $db->query('SELECT firstname, lastname, email, id_people AS id, company.company_name AS company FROM people INNER JOIN company ON people.fk_company = company.id_company ORDER BY id_people DESC');
 
     while ($donneePeople = $people->fetch()){
     ?>
@@ -14,7 +14,11 @@ function people(){
         <td><?= $donneePeople["firstname"]; ?></td>
         <td><?= $donneePeople["lastname"]; ?></td>
         <td><?= $donneePeople["email"]; ?></td>
-        <td><?= $donneePeople["fk_company"]; ?></td>
+        <td><?= $donneePeople["company"]; ?></td>
+		<?php if ($role == 1){?>
+		<td><a href="?action=edit&type=people&id=<?= $donneePeople["id"]; ?>"><i class="fas fa-pen"></i></a></td>
+        <td><a href="?action=delete&type=people&id=<?= $donneePeople["id"]; ?>"><i class="fas fa-times"></i></a></td>
+        <?php } ?>
       </tr>
     <?php
     }

@@ -4,12 +4,12 @@
             <div class = text-center>
                 <h4>Contact</h4>
             </div>
-            <?php if($role == 1 OR 2){?>
+            <?php if($role == 1){?>
             <div class = text-center>
                 <h5><a href="?action=addpeople">Ajouter un contact</a></h5>
             </div>
             <?php } ?>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Prénom</th>
                     <th>Nom de famille</th>
