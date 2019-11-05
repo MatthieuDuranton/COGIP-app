@@ -17,17 +17,17 @@
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="tva" value = <?php echo $tva?>>
+                        <input class="form-control" type="text" name="vat" value = <?php echo $tva?>>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <select class="form-control" name="nationalité">
+                        <select class="form-control" name="country">
 							<?php fkOption("country","id_country, country_name");?>
 						</select>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <select name="role" class="form-control" >
+                        <select name="type" class="form-control" >
                             <?php fkOption("type","id_type, type_name");?>
                         </select>
                         <span> <?php echo $notfill_Err;?></span>

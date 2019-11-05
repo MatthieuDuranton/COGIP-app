@@ -33,7 +33,7 @@ function lastInvoice(){
 		<td><?= $donneeInvoice["reference"]; ?></td>
         <td><?= $donneeInvoice["company"]; ?></td>
         <td><?= $donneeInvoice["invoice_date"]; ?></td>
-		    <td><?= $donneeInvoice["firstname"]; ?> <?= $donneeInvoice["lastname"]; ?></td>
+		<td><?= $donneeInvoice["firstname"]; ?> <?= $donneeInvoice["lastname"]; ?></td>
       </tr>
     <?php
     }
@@ -52,7 +52,7 @@ function lastCompany(){
 	<tr>
         <td><?= $donneeCompany["company_name"]; ?></td>
         <td><?= $donneeCompany["vat"]; ?></td>
-		    <td><?= $donneeCompany["country"]; ?></td>
+		<td><?= $donneeCompany["country"]; ?></td>
         <td><?= $donneeCompany["type"]; ?></td>
       </tr>
     <?php
