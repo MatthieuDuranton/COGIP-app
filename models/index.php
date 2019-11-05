@@ -35,6 +35,7 @@ function connection($username, $password){
                 $_SESSION['firstname'] = $res['firstname'];
                 $_SESSION['lastname'] = $res['lastname'];
                 $_SESSION['fk_role'] = $res['fk_role'];
+				$_SESSION['userid'] = $res['id_user'];
 				$_SESSION['logged'] = true;
 
                 header("location:?action=dashboard");//if true : moves user to the dashboard

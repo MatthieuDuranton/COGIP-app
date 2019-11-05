@@ -9,7 +9,7 @@
                 <h5><a href="?action=addinvoice">Ajouter une Facture</a></h5>
             </div>
             <?php } ?>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Référence</th>
                     <th>Société</th>

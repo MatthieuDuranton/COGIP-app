@@ -1,12 +1,26 @@
 <?php
 
-	global $user_Fname, $user_Lname, $user_rights, $rights;
-
 	$user_Fname = $_SESSION['firstname'];
 	$user_Lname = $_SESSION['lastname'];
+	$user_id = $_SESSION['userid'];
 	$role = $_SESSION['fk_role'];
 
+	function lastConnected(){
+		global $db;
+
+		global $user_Fname, $user_Lname, $role, $rights, $user_id;
+
+        $req = $db->prepare("UPDATE user SET last_connected = CURRENT_TIMESTAMP WHERE id_user = :userid");
+        $req->execute(array(
+			'userid' => $user_id
+		));
+	}
+
+	lastConnected();
+
 	function welcome(){
+		global $user_Fname, $user_Lname, $role, $rights, $user_id;
+
 		if($role == 1){
 			echo "Bienvenue Grand Maître ".$user_Fname." ".$user_Lname;
 		} else {
