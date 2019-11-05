@@ -9,7 +9,7 @@
                 <h5><a href="?action=addcompany">Ajouter un Client</a></h5>
             </div>
             <?php } ?>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Nom</th>
                     <th>N° de TVA</th>
