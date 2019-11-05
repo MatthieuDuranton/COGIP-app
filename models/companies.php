@@ -4,6 +4,8 @@ $role = $_SESSION['fk_role'];//
 
 //définir fonction companies pour afficher ceux de la base de donnée
 function companies(){
+	global $role;
+	
     $role = $_SESSION['fk_role'];
     global $db;
 

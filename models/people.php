@@ -4,6 +4,10 @@ $role = $_SESSION['fk_role'];//
 
 //définir fonction people pour afficher ceux de la base de donnée
 function people(){
+	global $role;
+
+	$role = $_SESSION["fk_role"];
+
     global $db;
 
     $people = $db->query('SELECT firstname, lastname, email, id_people AS id, company.company_name AS company FROM people INNER JOIN company ON people.fk_company = company.id_company ORDER BY id_people DESC');
