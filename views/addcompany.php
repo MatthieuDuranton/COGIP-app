@@ -26,7 +26,7 @@
                     </th>
                     <th>
                         <select name="role" class="form-control" >
-                            <?php fkOption("type","id_type, typename");?>
+                            <?php fkOption("type","id_type, type_name");?>
                         </select>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
