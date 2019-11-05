@@ -1,6 +1,6 @@
 <?php
 
-    $name_company = $tva = $nationalité = $role = "";
+    $name_company = $tva = $nationalité = $role = $send_success = "";
     $notfill_Err ="";
     global $db;
     
@@ -33,7 +33,7 @@
             'fk_type' => $role,
         ));
 
-         $send_success ="La compagnie a été ajoutée."; 
+         $send_success ="La nouvelle société a bien été ajoutée"; 
          $name_company = $tva = $nationalité = $role = "";
 
     };
