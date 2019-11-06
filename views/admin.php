@@ -2,24 +2,25 @@
     <div class = "row text-center mt-4">
         <div class="col-12">
             <div class = text-center>
-                <h4>Clients</h4>
+                <h4>Ajouter / Modifier les utilisateurs</h4>
             </div>
-            <?php if($role == 1){?>
+            <?php if($role == 1 OR 2){?>
             <div class = text-center>
-                <h5><a href="?action=addcompany">Ajouter un Client</a></h5>
+                <h5><a href="?action=adduser">ajouter un utilisateur.</a></h5>
             </div>
             <?php } ?>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Nom</th>
-                    <th>N° de TVA</th>
-                    <th>Nationalité</th>
+                    <th>Prenom</th>
+                    <th>password</th>
+                    <th>Email</th>
                     <?php if($role == 1){?>
                     <th>Modifier</th>
                     <th>Effacer</th>
                     <?php } ?>
                 </tr>
-                <?php clients(); ?>
+                <?php admin(); ?>
             </table>
         </div>
     </div>
