@@ -17,7 +17,7 @@
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>
-                        <input class="form-control" type="text" name="vat" value = <?php echo $vat?>>
+                        <input class="form-control" type="text" name="vat" value = <?php echo $tva?>>
                         <span> <?php echo $notfill_Err;?></span>
                     </th>
                     <th>

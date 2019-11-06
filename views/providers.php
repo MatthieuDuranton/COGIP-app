@@ -4,12 +4,12 @@
             <div class = text-center>
                 <h4>Fournisseurs</h4>
             </div>
-            <?php if($role == 1){?>
+            <?php if($role == 1 OR 2){?>
             <div class = text-center>
                 <h5><a href="?action=addcompany">Ajouter un Fournisseur</a></h5>
             </div>
             <?php } ?>
-            <table class="table">
+            <table>
                 <tr>
                     <th>Nom</th>
                     <th>N° de TVA</th>
