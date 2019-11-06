@@ -4,7 +4,7 @@
             <div class = text-center>
                 <h4>Clients</h4>
             </div>
-            <?php if($role == 1 OR 2){?>
+            <?php if($role == 1){?>
             <div class = text-center>
                 <h5><a href="?action=addcompany">Ajouter un Client</a></h5>
             </div>
@@ -14,7 +14,6 @@
                     <th>Nom</th>
                     <th>N° de TVA</th>
                     <th>Nationalité</th>
-                    <th>Type de relations</th>
                     <?php if($role == 1){?>
                     <th>Modifier</th>
                     <th>Effacer</th>

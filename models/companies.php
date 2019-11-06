@@ -1,12 +1,8 @@
 <?php
-//définir $role pour afficher ou non l'ajout de client
-$role = $_SESSION['fk_role'];//
-
 //définir fonction companies pour afficher ceux de la base de donnée
 function companies(){
 	global $role;
-	
-    $role = $_SESSION['fk_role'];
+
     global $db;
 
     $companies = $db->query('SELECT company_name, id_company AS id, vat, country.country_name AS country, type.type_name AS type FROM company INNER JOIN country ON company.fk_country = country.id_country INNER JOIN type ON company.fk_type = type.id_type ORDER BY id_company DESC');

@@ -1,12 +1,7 @@
 <?php
-//définir $role pour afficher ou non l'ajout de contact
-$role = $_SESSION['fk_role'];//
-
 //définir fonction people pour afficher ceux de la base de donnée
 function people(){
 	global $role;
-
-	$role = $_SESSION["fk_role"];
 
     global $db;
 
