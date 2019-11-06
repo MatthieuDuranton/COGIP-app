@@ -10,12 +10,24 @@ $id = htmlspecialchars(strip_tags($_GET['id']));
 function edit() {
     global $db;
     if ($type = invoice){
+        //Variables pour les titres
         $t1 = "Référence";
         $t2 = "Société";
         $t3 = "Date d'émission";
-        $t4 = "Personne de contact"
+        $t4 = "Personne de contact";
+        $t5 = "";
+        $t6 = "";
+        //Récupérer les données de la facture à changer
+        $invoices = $db->query("SELECT * AS id, company.company_name AS company, people.firstname AS firstname, people.lastname AS lastname FROM invoice INNER JOIN company ON invoice.fk_company = company.id_company INNER JOIN people ON invoice.fk_people = people.id_people WHERE id = $id");
+        while ($donneeInvoices = $invoices->fetch()){
+                $donneeInvoices["reference"];
+                $donneeInvoices["company"];
+                $donneeInvoices["invoice_date"];
+                $donneeInvoices["firstname"]; ?> <?= $donneeInvoices["lastname"];
+            };
+            $invoices->closeCursor();
     }
-}
+};
 
 //vérifications des requests et orientation de la fonction edit()
 if ($_role != 1){
