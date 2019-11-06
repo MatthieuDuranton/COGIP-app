@@ -4,7 +4,7 @@
             <div class = text-center>
                 <h4>Ajouter une facture</h4>
             </div>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Référence</th>
                     <th>Société</th>
@@ -40,7 +40,7 @@
     <div class="col-12 text-center mt-2">
         <p><?= $send_success; ?></p>
     </div>
-    
+
     <div class = "col-12 text-center mt-2">
         <input type="submit" value="submit">
     </div>

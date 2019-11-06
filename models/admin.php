@@ -1,7 +1,4 @@
 <?php
-//définir $role pour afficher ou non l'ajout de client
-$role = $_SESSION['fk_role'];//
-
 //définir fonction client pour afficher ceux de la base de donnée
 function admin(){
 
@@ -27,7 +24,7 @@ function admin(){
     $modifUser->closeCursor();
 }
 
-// Je place ici mes requetes Update et Delete vu que la page edit n'est pas encore créée... 
+// Je place ici mes requetes Update et Delete vu que la page edit n'est pas encore créée...
 
 //Update.
 function updateUser(){
@@ -46,7 +43,7 @@ function updateUser(){
 }
 // Delete
 function deleteUser(){
-    
+
     global $db;
     $donneeUsers = "";
 

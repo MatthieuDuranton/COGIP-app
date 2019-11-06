@@ -4,7 +4,7 @@
             <div class = text-center>
                 <h4>Ajouter un contact</h4>
             </div>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Prénom</th>
                     <th>Nom de famille</th>

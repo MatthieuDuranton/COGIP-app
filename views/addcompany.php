@@ -4,7 +4,7 @@
             <div class = text-center>
                 <h4>Ajouter une société</h4>
             </div>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Nom</th>
                     <th>N° de TVA</th>
