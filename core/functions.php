@@ -50,3 +50,13 @@
 			}
 		}
 	}
+
+	function feedback($arg, $type = "success"){
+		if(isset($arg) && !empty($arg)){
+			?>
+				<div class="alert alert-<?= $type; ?>" role="alert">
+					<?= $arg; ?>
+				</div>
+			<?php
+		}
+	}

@@ -72,3 +72,11 @@
 		</ul>
 <?php } ?>
 	</header>
+
+	<?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){ ?>
+	<div class="row">
+	    <div class="col-12">
+	        <h2><?php welcome(); ?></h2>
+	    </div>
+	</div>
+	<?php } ?>

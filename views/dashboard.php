@@ -1,9 +1,3 @@
-<div class="row">
-    <div class="col-12">
-        <h2><?php welcome(); ?></h2>
-    </div>
-</div>
-
 <div class = "row text-center mt-4">
     <div class="col-12 col-md-4">
         <div class = text-center>
