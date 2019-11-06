@@ -9,7 +9,7 @@
         <div class = text-center>
             <h4><a href="?action=people">Voir tous les contacts</a></h4>
         </div>
-        <table class="table">
+        <table>
             <tr>
                 <th>Prénom</th>
                 <th>Nom de famille</th>
@@ -24,7 +24,7 @@
         <div class = text-center>
             <h4><a href="?action=invoices">Voir toutes les factures</a></h4>
         </div>
-        <table class="table">
+        <table>
             <tr>
                 <th>Référence</th>
                 <th>Société</th>
@@ -39,7 +39,7 @@
         <div class = text-center>
             <h4><a href="?action=companies">Voir toutes les sociétés</a></h4>
         </div>
-        <table class="table">
+        <table>
             <tr>
                 <th>Nom</th>
                 <th>N° de TVA</th>
@@ -52,10 +52,14 @@
 </div>
 
 <div class = "row text-center mt-4">
-    <div class="col-6">
+    <div class="col-4">
         <h4><a href="?action=providers">Voir tous les fournisseurs</a></h4>
     </div>
-    <div class="col-6">
+    <div class="col-4">
         <h4><a href="?action=clients">Voir tous les clients</a></h4>
     </div>
+    <div class="col-4">
+        <h4><a href="?action=admin">Modifier les utilisateurs.</a></h4>
+    </div>
 </div>
+

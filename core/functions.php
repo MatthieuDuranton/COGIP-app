@@ -1,11 +1,9 @@
 <?php
 
-	$user_Fname = $_SESSION['firstname'] ?? NULL;
-	$user_Lname = $_SESSION['lastname'] ?? NULL;
-	$user_id = $_SESSION['userid'] ?? NULL;
-	$role = $_SESSION['fk_role'] ?? NULL;
-
-	lastConnected();
+	$user_Fname = $_SESSION['firstname'];
+	$user_Lname = $_SESSION['lastname'];
+	$user_id = $_SESSION['userid'];
+	$role = $_SESSION['fk_role'];
 
 	function lastConnected(){
 		global $db;
@@ -17,6 +15,8 @@
 			'userid' => $user_id
 		));
 	}
+
+	lastConnected();
 
 	function welcome(){
 		global $user_Fname, $user_Lname, $role, $rights, $user_id;
