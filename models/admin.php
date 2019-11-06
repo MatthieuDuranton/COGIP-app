@@ -4,8 +4,10 @@ $role = $_SESSION['fk_role'];//
 
 //définir fonction client pour afficher ceux de la base de donnée
 function admin(){
+
     global $db;
     global $role;
+
     $modifUser = $db->query('SELECT * FROM user');
 
     while ($donneeUsers = $modifUser->fetch()){
@@ -25,19 +27,29 @@ function admin(){
     $modifUser->closeCursor();
 }
 
-// Je place ici mes requetes Update et Delete vu que la page edit n'est pas encore créer... 
+// Je place ici mes requetes Update et Delete vu que la page edit n'est pas encore créée... 
 
 //Update.
+function updateUser(){
 
-$req = $db -> prepare("UPDATE user SET prenom = :firstname, nom = :lastname, pwd = :password, email = :email WHERE ID =".$donneeUsers["id"]."");
-$req = execute(array(
+    global $db;
+    $firstname = $lastname = $password = $email = $donneeUsers = "";
 
-    'prenom' => $firstname,
-    'nom' => $lastname,
-    'pwd' => $password,
-    'email' => $email
-));
+    $req = $db -> prepare("UPDATE user SET prenom = :firstname, nom = :lastname, pwd = :password, email = :email WHERE ID =".$donneeUsers["id"]."");
+    $req = execute(array(
 
+        'prenom' => $firstname,
+        'nom' => $lastname,
+        'pwd' => $password,
+        'email' => $email
+    ));
+}
 // Delete
+function deleteUser(){
+    
+    global $db;
+    $donneeUsers = "";
 
-$req = $db -> exec("DELETE FROM user WHERE ID = ".$donneeUsers["id"]."");
+    $req = $db -> exec("DELETE FROM user WHERE ID = ".$donneeUsers["id"]."");
+
+}
