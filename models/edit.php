@@ -37,12 +37,12 @@ function edit($type) {
         $t5 = "";
         $t6 = "";
         //Récupérer les données de la facture à changer
-        $invoices = $db->query("SELECT invoice_date, reference, company.company_name AS company, people.firstname AS firstname, people.lastname AS lastname FROM invoice INNER JOIN company ON invoice.fk_company = company.id_company INNER JOIN people ON invoice.fk_people = people.id_people WHERE id_invoice = $id");
+        $invoices = $db->query("SELECT invoice_date, reference, fk_company, fk_people FROM invoice WHERE id_invoice = $id");
         while ($donneeInvoices = $invoices->fetch()){
             $q1 = $donneeInvoices["reference"];
-            $q2 = $donneeInvoices["company"];
+            $q2 = $donneeInvoices["fk_company"];
             $q3 = $donneeInvoices["invoice_date"];
-            $q4 = $donneeInvoices["firstname"]." ".$donneeInvoices["lastname"];
+            $q4 = $donneeInvoices["fk_people"];
             $q5 = "";
             $q6 = "";
         };

@@ -27,9 +27,9 @@
 		}
 	}
 
-	function fkOption($table, $column){
+	function fkOption($table, $column, $check = NULL){
 		global $db;
-	  $query = $db->query('SELECT * FROM '.$table.' ORDER BY id_'.$table);
+		$query = $db->query('SELECT * FROM '.$table.' ORDER BY id_'.$table);
 
 		if($table == "people"){
 			$column = explode(", ", $column);
@@ -38,7 +38,7 @@
 			$column2 = $column[2];
 
 			while($result = $query->fetch(PDO::FETCH_ASSOC)){
-				echo '<option value="'.$result[$column0].'">'.$result[$column1].' '.$result[$column2].'</option>';
+				echo '<option value="'.$result[$column0].'" '.($check == $result[$column0]) ? 'selected' : ' ').'>'.$result[$column1].' '.$result[$column2].'</option>';
 			}
 		} else {
 			$column = explode(", ", $column);
@@ -46,7 +46,7 @@
 			$column1 = $column[1];
 
 			while($result = $query->fetch(PDO::FETCH_ASSOC)){
-				echo '<option value="'.$result[$column0].'">'.$result[$column1].'</option>';
+				echo '<option value="'.$result[$column0].'" '.($check == $result[$column0]) ? 'selected' : ' ').'>'.$result[$column1].'</option>';
 			}
 		}
 	}
