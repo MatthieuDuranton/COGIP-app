@@ -12,6 +12,10 @@ $id = htmlspecialchars(strip_tags($_GET['id']));
 //fonction edit()
 function edit($type) {
     global $db;
+    global $type;
+    global $id;
+    global $send_success;
+
     if ($type == "invoice"){
         //Variables pour les titres
         $t1 = "Référence";
