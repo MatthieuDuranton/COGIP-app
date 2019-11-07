@@ -15,6 +15,7 @@
                     <th>Nom de famille</th>
                     <th>Email</th>
                     <th>Société(s)</th>
+                    <th>Détails</th>
                     <?php if($role == 1){?>
                     <th>Modifier</th>
                     <th>Effacer</th>

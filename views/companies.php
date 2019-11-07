@@ -15,6 +15,7 @@
                     <th>N° de TVA</th>
                     <th>Nationalité</th>
                     <th>Type de relations</th>
+                    <th>Détails</th>
                     <?php if($role == 1){?>
                     <th>Modifier</th>
                     <th>Effacer</th>

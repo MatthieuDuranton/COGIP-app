@@ -11,11 +11,12 @@ function invoices(){
     ?>
 	<tr>
 		<td><?= $donneeInvoices["reference"]; ?></td>
-        <td><?= $donneeInvoices["company"]; ?></td>
+    <td><?= $donneeInvoices["company"]; ?></td>
 		<td><?= $donneeInvoices["invoice_date"]; ?></td>
-        <td><?= $donneeInvoices["firstname"]; ?> <?= $donneeInvoices["lastname"]; ?></td>
+    <td><?= $donneeInvoices["firstname"]; ?> <?= $donneeInvoices["lastname"]; ?></td>
+    <td><a href="?action=viewInvoice&id=<?= $donneeInvoices["id"]; ?>"><i class="fas fa-eye"></i></a></td>
 		<?php if($role == 1){ ?>
-		<td><a href="?action=editInvoice&type=invoice&id=<?= $donneeInvoices["id"]; ?>"><i class="fas fa-pen"></i></a></td>
+		    <td><a href="?action=editInvoice&type=invoice&id=<?= $donneeInvoices["id"]; ?>"><i class="fas fa-pen"></i></a></td>
         <td><a href="?action=delete&type=invoice&id=<?= $donneeInvoices["id"]; ?>"><i class="fas fa-times"></i></a></td>
 		<?php } ?>
       </tr>

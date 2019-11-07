@@ -14,6 +14,7 @@ function companies(){
         <td><?= $donneeCompanies["vat"]; ?></td>
         <td><?= $donneeCompanies["country"]; ?></td>
         <td><?= $donneeCompanies["type"]; ?></td>
+				<td><a href="?action=viewCompany&id=<?= $donneeCompanies["id"]; ?>"><i class="fas fa-eye"></i></a></td>
         <?php if($role == 1){ ?>
 		<td><a href="?action=editCompany&type=company&id=<?= $donneeCompanies["id"]; ?>"><i class="fas fa-pen"></i></a></td>
         <td><a href="?action=delete&type=company&id=<?= $donneeCompanies["id"]; ?>"><i class="fas fa-times"></i></a></td>

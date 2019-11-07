@@ -15,6 +15,7 @@
                     <th>Société</th>
                     <th>Date d'émission</th>
                     <th>Personne de contact</th>
+                    <th>Détails</th>
                     <?php if($role == 1){?>
                     <th>Modifier</th>
                     <th>Effacer</th>
