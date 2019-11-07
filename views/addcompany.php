@@ -1,47 +1,43 @@
-<form method="POST" action=''>
     <div class = "row text-center mt-4">
         <div class="col-12">
-            <div class = text-center>
+            <div class="text-center">
                 <h4>Ajouter une société</h4>
             </div>
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>N° de TVA</th>
-                    <th>Nationalité</th>
-                    <th>Type de relations</th>
-                </tr>
-                <tr>
-                    <th>
-                        <input class="form-control" type="text" name="name_company" value="<?php echo $name_company; ?>">
-                        <span> <?php echo $notfill_Err; ?></span>
-                    </th>
-                    <th>
-                        <input class="form-control" type="text" name="vat" value="<?php echo $vat; ?>">
-                        <span> <?php echo $notfill_Err; ?></span>
-                    </th>
-                    <th>
-                        <select class="form-control" name="country">
-							<?php fkOption("country","id_country, country_name"); ?>
-						</select>
-                        <span> <?php echo $notfill_Err; ?></span>
-                    </th>
-                    <th>
-                        <select class="form-control" name="type">
-                            <?php fkOption("type","id_type, type_name");?>
-                        </select>
-                        <span><?php echo $notfill_Err; ?></span>
-                    </th>
-                </tr>
-            </table>
+
+            <?php feedback($send_success); ?>
+
+            <form method="POST" action="">
+              <div class="row">
+                <div class="form-group col-3">
+                  <label for="name_company">Nom</label>
+                  <input class="form-control" type="text" name="name_company" placeholder="Nom" value="<?php echo $name_company; ?>">
+                  <span> <?php echo $notfill_Err; ?></span>
+                </div>
+
+                <div class="form-group col-3">
+                  <label for="vat">N° de TVA</label>
+                  <input class="form-control" type="text" name="vat" placeholder="N° de TVA" value="<?php echo $vat; ?>">
+                  <span> <?php echo $notfill_Err; ?></span>
+                </div>
+
+                <div class="form-group col-3">
+                  <label for="country">Nationalité</label>
+                  <select class="form-control" name="country">
+                    <?php fkOption("country","id_country, country_name"); ?>
+                  </select>
+                </div>
+
+                <div class="form-group col-3">
+                  <label for="type">Type de relations</label>
+                  <select class="form-control" name="type">
+                      <?php fkOption("type","id_type, type_name");?>
+                  </select>
+                </div>
+
+                <div class="form-group col-12">
+                  <input type="submit" value="Envoyer" class="btn btn-primary btn-lg">
+                </div>
+              </div>
+            </form>
         </div>
     </div>
-
-    <div class="col-12 text-center mt-2">
-        <p><?= $send_success; ?></p>
-    </div>
-
-    <div class = "col-12 text-center mt-2">
-        <input type="submit" value="submit" class="btn btn-primary btn-lg">
-    </div>
-</form>

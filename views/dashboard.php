@@ -1,15 +1,9 @@
-<div class="row">
-    <div class="col-12">
-        <h2><?php welcome(); ?></h2>
-    </div>
-</div>
-
 <div class = "row text-center mt-4">
     <div class="col-12 col-md-4">
         <div class = text-center>
             <h4><a href="?action=people">Voir tous les contacts</a></h4>
         </div>
-        <table>
+        <table class="table">
             <tr>
                 <th>Prénom</th>
                 <th>Nom de famille</th>
@@ -24,7 +18,7 @@
         <div class = text-center>
             <h4><a href="?action=invoices">Voir toutes les factures</a></h4>
         </div>
-        <table>
+        <table class="table">
             <tr>
                 <th>Référence</th>
                 <th>Société</th>
@@ -39,7 +33,7 @@
         <div class = text-center>
             <h4><a href="?action=companies">Voir toutes les sociétés</a></h4>
         </div>
-        <table>
+        <table class="table">
             <tr>
                 <th>Nom</th>
                 <th>N° de TVA</th>
@@ -62,4 +56,3 @@
         <h4><a href="?action=admin">Modifier les utilisateurs.</a></h4>
     </div>
 </div>
-

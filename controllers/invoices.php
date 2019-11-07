@@ -1,7 +1,7 @@
 <?php
 	require('models/invoices.php');
 
-	$title = "Invoices";
+	$title = "Factures";
 	require('core/header.php');
 	require('views/invoices.php');
 	require('core/footer.php');
