@@ -3,7 +3,7 @@
 global $db;
 
 $username_Err = $password_Err = $email_Err = $fname_Err = $lname_Err = "";
-$username = $password = $email = $fname = $lname = "";
+$username = $password = $email = $fname = $lname = $send_success="";
 
 if ($_SERVER['REQUEST_METHOD']=="POST"){
 
