@@ -10,7 +10,7 @@
               <div class="row">
                 <div class="form-group col-3">
                   <label for="userName">Nom d'utilisateur</label>
-                  <input class="form-control" type="text" name="userName" placeholder="Nom d'utilisateur" value="<?php echo $username; ?>">
+                  <input class="form-control" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php echo $username; ?>">
                   <span> <?php echo $username_Err;?></span>
                 </div>
 
