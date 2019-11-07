@@ -66,6 +66,22 @@
 				</div>
 			</li>
 
+			<?php
+				if($role == 1){
+			?>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Utilisateurs
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="?action=user">Liste</a>
+						<a class="dropdown-item" href="?action=adduser">Ajouter</a>
+					</div>
+				</li>
+			<?php
+				}
+			?>
+
 			<li class="nav-item">
 				<a class="nav-link" href="?action=logout">Déconnexion</a>
 			</li>
