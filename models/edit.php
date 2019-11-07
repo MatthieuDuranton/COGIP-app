@@ -15,6 +15,18 @@ function edit($type) {
     global $type;
     global $id;
     global $send_success;
+    global $q1;
+    global $q2;
+    global $q3;
+    global $q4;
+    global $q5;
+    global $q6;
+    global $t1;
+    global $t2;
+    global $t3;
+    global $t4;
+    global $t5;
+    global $t6;
 
     if ($type == "invoice"){
         //Variables pour les titres
@@ -30,7 +42,7 @@ function edit($type) {
             $q1 = $donneeInvoices["reference"];
             $q2 = $donneeInvoices["company"];
             $q3 = $donneeInvoices["invoice_date"];
-            $q4 = $donneeInvoices["firstname"]; ?> <?= $donneeInvoices["lastname"];
+            $q4 = $donneeInvoices["firstname"]." ".$donneeInvoices["lastname"];
             $q5 = "";
             $q6 = "";
         };
