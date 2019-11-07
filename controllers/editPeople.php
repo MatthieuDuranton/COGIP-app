@@ -1,7 +1,7 @@
 <?php
 	require('models/edit.php');
 
-	$title = "Modifier des informations";
+	$title = "Modifier un contact";
 	require('core/header.php');
-	require('views/edit.php');
+	require('views/editPeople.php');
 	require('core/footer.php');
