@@ -12,6 +12,10 @@ $id = htmlspecialchars(strip_tags($_GET['id']));
 //fonction edit()
 function edit($type) {
     global $db;
+    global $type;
+    global $id;
+    global $send_success;
+
     if ($type == "invoice"){
         //Variables pour les titres
         $t1 = "Référence";
@@ -95,25 +99,24 @@ function edit($type) {
 };
 
 //vérifications des requests et orientation de la fonction edit()
-if ($role != 1){
-    header("location:?action = dasboard");//l'utilisateur a les droits pour visualiser la page
-}else if ($role == 1){
-    if (isset($type) && empty($type)){//il y  un type
+if($role != 1){
+    header("location:?action=dasboard");//l'utilisateur a les droits pour visualiser la page
+} else {
+    if(isset($type) && !empty($type)){//il y  un type
+		if(isset($id) && !empty($id)){
+			if($type == "invoice"){//si type = invoice, lancer la fonction d'édition pour invoice
+	            edit($type);
+	        } else if($type == "people"){//type = people
+	            edit($type);
+	        } else if($type == "company"){//type = company
+	            edit($type);
+	        } else if($type == "user"){//type = user
+	            edit($type);
+	        }
+		} else {
+			header("location:?action = dasboard");
+		}
+    } else {//il y a une id
         header("location:?action = dasboard");
-    }else if (isset($id) && empty($id)){//il y a une id
-        header("location:?action = dasboard");
-    }else{
-        if ($type == "invoice"){//si type = invoice, lancer la fonction d'édition pour invoice
-            edit($type);
-        }else if ($type == "people"){//type = people
-            edit($type);
-        }else if ($type == "company"){//type = company
-            edit($type);
-        }else if ($type == "user"){//type = user
-            edit($type);
-        };
-    };
-}else{
-    header("location:?action = dasboard");//si aucun type prédéfini ne correspond à celui appelé par le user
-};
-
+    }
+}
