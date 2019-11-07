@@ -12,7 +12,7 @@ $id = htmlspecialchars(strip_tags($_GET['id']));
 //fonction edit()
 function edit($type) {
     global $db;
-    if ($type = "invoice"){
+    if ($type == "invoice"){
         //Variables pour les titres
         $t1 = "Référence";
         $t2 = "Société";
@@ -32,7 +32,7 @@ function edit($type) {
         };
         $invoices->closeCursor();
     };
-    if ($type = "company"){
+    if ($type == "company"){
         //Variables pour les titres
         $t1 = "Nom";
         $t2 = "N° de TVA";
@@ -52,7 +52,7 @@ function edit($type) {
         };
         $companies->closeCursor();
     };
-    if ($type = "people"){
+    if ($type == "people"){
         //Variables pour les titres
         $t1 = "Nom de famille";
         $t2 = "Prénom";
@@ -72,7 +72,7 @@ function edit($type) {
         };
         $people->closeCursor();
     };
-    if ($type = "user"){
+    if ($type == "user"){
         //Variables pour les titres
         $t1 = "Nom d'utilisateur";
         $t2 = "Mot de passe";
