@@ -68,7 +68,7 @@ function edit($type) {
         $people = $db->query("SELECT firstname, lastname, email, company.company_name AS company FROM people INNER JOIN company ON people.fk_company = company.id_company WHERE id_people = $id");
         while ($donneePeople = $people->fetch()){
             $q1 = $donneePeople["firstname"];
-            $q2 = $donneeCompanies["lastname"];
+            $q2 = $donneePeople["lastname"];
             $q3 = $donneePeople["company"];
             $q4 = "";
             $q5 = $donneePeople["email"];
