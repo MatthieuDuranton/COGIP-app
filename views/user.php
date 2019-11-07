@@ -20,7 +20,7 @@
                     <th>Effacer</th>
                     <?php } ?>
                 </tr>
-                <?php admin(); ?>
+                <?php showUser(); ?>
             </table>
         </div>
     </div>

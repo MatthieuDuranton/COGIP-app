@@ -1,6 +1,6 @@
 <?php
 //définir fonction client pour afficher ceux de la base de donnée
-function admin(){
+function showUser(){
 
     global $db;
     global $role;
