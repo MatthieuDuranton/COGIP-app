@@ -2,14 +2,17 @@
 //pour appeler la variable role
 global $role;
 
+//message de succés
+$send_success = "Les données ont bien été modifiées";
+
 //récupération type et id dans l'envoi de l'URL + sanitize
 $type = htmlspecialchars(strip_tags($_GET['type']));
 $id = htmlspecialchars(strip_tags($_GET['id']));
 
 //fonction edit()
-function edit() {
+function edit($type) {
     global $db;
-    if ($type = invoice){
+    if ($type = "invoice"){
         //Variables pour les titres
         $t1 = "Référence";
         $t2 = "Société";
@@ -18,60 +21,96 @@ function edit() {
         $t5 = "";
         $t6 = "";
         //Récupérer les données de la facture à changer
-        $invoices = $db->query("SELECT * AS id, company.company_name AS company, people.firstname AS firstname, people.lastname AS lastname FROM invoice INNER JOIN company ON invoice.fk_company = company.id_company INNER JOIN people ON invoice.fk_people = people.id_people WHERE id = $id");
+        $invoices = $db->query("SELECT invoice_date, reference, company.company_name AS company, people.firstname AS firstname, people.lastname AS lastname FROM invoice INNER JOIN company ON invoice.fk_company = company.id_company INNER JOIN people ON invoice.fk_people = people.id_people WHERE id_invoice = $id");
         while ($donneeInvoices = $invoices->fetch()){
-                $donneeInvoices["reference"];
-                $donneeInvoices["company"];
-                $donneeInvoices["invoice_date"];
-                $donneeInvoices["firstname"]; ?> <?= $donneeInvoices["lastname"];
-            };
-            $invoices->closeCursor();
-    }
+            $q1 = $donneeInvoices["reference"];
+            $q2 = $donneeInvoices["company"];
+            $q3 = $donneeInvoices["invoice_date"];
+            $q4 = $donneeInvoices["firstname"]; ?> <?= $donneeInvoices["lastname"];
+            $q5 = "";
+            $q6 = "";
+        };
+        $invoices->closeCursor();
+    };
+    if ($type = "company"){
+        //Variables pour les titres
+        $t1 = "Nom";
+        $t2 = "N° de TVA";
+        $t3 = "Nationalité";
+        $t4 = "Type de relations";
+        $t5 = "";
+        $t6 = "";
+        //Récupérer les données de la société à changer
+        $companies = $db->query("SELECT company_name, vat, country.country_name AS country, type.type_name AS type FROM company INNER JOIN country ON company.fk_country = country.id_country INNER JOIN type ON company.fk_type = type.id_type WHERE id_company = $id");
+        while ($donneeCompanies = $companies->fetch()){
+            $q1 = $donneeCompanies["company_name"];
+            $q2 = $donneeCompanies["vat"];
+            $q3 = $donneeCompanies["country"];
+            $q4 = $donneeCompanies["type"];
+            $q5 = "";
+            $q6 = "";
+        };
+        $companies->closeCursor();
+    };
+    if ($type = "people"){
+        //Variables pour les titres
+        $t1 = "Nom de famille";
+        $t2 = "Prénom";
+        $t3 = "Email";
+        $t4 = "Société";
+        $t5 = "";
+        $t6 = "";
+        //Récupérer les données du contact à changer
+        $people = $db->query("SELECT firstname, lastname, email, company.company_name AS company FROM people INNER JOIN company ON people.fk_company = company.id_company WHERE id_people = $id");
+        while ($donneePeople = $people->fetch()){
+            $q1 = $donneePeople["firstname"];
+            $q2 = $donneeCompanies["lastname"];
+            $q3 = $donneePeople["company"];
+            $q4 = "";
+            $q5 = $donneePeople["email"];
+            $q6 = "";
+        };
+        $people->closeCursor();
+    };
+    if ($type = "user"){
+        //Variables pour les titres
+        $t1 = "Nom d'utilisateur";
+        $t2 = "Mot de passe";
+        $t3 = "Prénom";
+        $t4 = "Nom de famille";
+        $t5 = "Email";
+        $t6 = "Niveau d'autorisation";
+        //Récupérer les données du contact à changer
+        $user = $db->query("SELECT firstname, lastname, email, username, role.role_name AS role FROM user INNER JOIN role ON user.fk_role = role.role_name WHERE id_user = $id");
+        while ($donneeUser = $user->fetch()){
+            $q1 = $donneeUser["username"];
+            $q2 = "Password";
+            $q3 = $donneeUser["firstname"];
+            $q4 = $donneeUser["lastname"];
+            $q5 = $donneeUser["email"];
+            $q6 = $donneeUser["role"];
+        };
+        $user->closeCursor();
+    };
 };
 
 //vérifications des requests et orientation de la fonction edit()
-if ($_role != 1){
+if ($role != 1){
     header("location:?action = dasboard");//l'utilisateur a les droits pour visualiser la page
-}else if{
+}else if ($role == 1){
     if (isset($type) && empty($type)){//il y  un type
         header("location:?action = dasboard");
     }else if (isset($id) && empty($id)){//il y a une id
         header("location:?action = dasboard");
     }else{
         if ($type == "invoice"){//si type = invoice, lancer la fonction d'édition pour invoice
-            edit("invoice");
-        }else if ($type == "people"){
-            ?>
-            <tr>
-                <th>Nom de famille</th>
-                <th>Prénom</th>
-                <th>Email</th>
-                <th>Société</th>
-            </tr>
-            <?php
-            edit("people");
-        }else if ($type == "company"){
-            ?>
-            <tr>
-                <th>Nom</th>
-                <th>N° de TVA</th>
-                <th>Nationalité</th>
-                <th>Type de relations</th>
-            </tr>
-            <?php
-            edit("company");
-        }else if ($type == "user"){
-            ?>
-            <tr>
-                <th>Nom d'utilisateur</th>
-                <th>Mot de passe</th>
-                <th>email</th>
-                <th>Prénom</th>
-                <th>Nom de famille</th>
-                <th>Niveau d'autorisation</th>
-            </tr>
-            <?php
-            edit("user");
+            edit($type);
+        }else if ($type == "people"){//type = people
+            edit($type);
+        }else if ($type == "company"){//type = company
+            edit($type);
+        }else if ($type == "user"){//type = user
+            edit($type);
         };
     };
 }else{
