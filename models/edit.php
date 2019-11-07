@@ -2,19 +2,74 @@
 //pour appeler la variable role
 global $role;
 
-//message de succés
-$send_success = "Les données ont bien été modifiées";
+//message de succès
+$send_success = "";
 
 //récupération type et id dans l'envoi de l'URL + sanitize
 $type = htmlspecialchars(strip_tags($_GET['type']));
 $id = htmlspecialchars(strip_tags($_GET['id']));
+
+function update(){
+	global $db;
+
+	global $type, $id;
+
+	if($_SERVER['REQUEST_METHOD']=="POST"){
+		if(isset($type) && !empty($type)){//il y  un type
+			if(isset($id) && !empty($id)){
+				if($type == "invoice"){//si type = invoice, lancer la fonction d'édition pour invoice
+					$name_company = $vat = $country = $type = $send_success = "";
+				    $notfill_Err ="";
+
+		            if (empty($name_company = htmlspecialchars(strip_tags($_POST['name_company'])))) {
+		                $notfill_Err = "Merci de remplir ce champ";
+		            };
+		            if (empty($vat = htmlspecialchars(strip_tags($_POST['vat'])))) {
+		                $notfill_Err = "Merci de remplir ce champ";
+		            };
+		            if (empty($country = htmlspecialchars(strip_tags($_POST['country'])))) {
+		                $email_Err = "Merci d'indiquer une nationalité valide";
+		            };
+		            if (empty($type = htmlspecialchars(strip_tags($_POST['type'])))) {
+		                $notfill_Err = "Merci de choisir un champ";
+		            };
+
+			        if ($notfill_Err == ""){
+			        $req = $db->prepare("UPDATE company SET company_name = :company_name, vat = :vat, fk_country = :country, fk_type = :type WHERE id_company = :id");
+			        $req->execute(array(
+			            'company_name' => $name_company,
+			            'vat' => $vat,
+			            'fk_country' => $country,
+			            'fk_type' => $type,
+						'id' => $id
+			        ));
+
+			        $send_success ="La société a bien été modifiée";
+			        $name_company = $vat = $country = $type = "";
+
+				    };
+		        } else if($type == "people"){//type = people
+
+		        } else if($type == "company"){//type = company
+
+		        } else if($type == "user"){//type = user
+
+		        }
+			} else {
+				header("location:?action=dashboard");
+			}
+	    } else {//il y a une id
+	        header("location:?action=dashboard");
+	    }
+	}
+
+}
 
 //fonction edit()
 function edit($type) {
     global $db;
     global $type;
     global $id;
-    global $send_success;
     global $q1;
     global $q2;
     global $q3;
@@ -118,6 +173,7 @@ if($role != 1){
 		if(isset($id) && !empty($id)){
 			if($type == "invoice"){//si type = invoice, lancer la fonction d'édition pour invoice
 	            edit($type);
+				update();
 	        } else if($type == "people"){//type = people
 	            edit($type);
 	        } else if($type == "company"){//type = company
@@ -126,9 +182,9 @@ if($role != 1){
 	            edit($type);
 	        }
 		} else {
-			header("location:?action = dasboard");
+			header("location:?action=dashboard");
 		}
     } else {//il y a une id
-        header("location:?action = dasboard");
+        header("location:?action=dashboard");
     }
 }
