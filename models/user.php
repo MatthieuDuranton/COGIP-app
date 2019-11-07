@@ -12,11 +12,10 @@ function showUser(){
 	<tr>
         <td><?= $donneeUsers["firstname"]; ?></td>
         <td><?= $donneeUsers["lastname"]; ?></td>
-        <td><?= $donneeUsers["password"]; ?></td>
         <td><?= $donneeUsers["email"]; ?></td>
         <?php if($role == 1){ ?>
-		<td><a href="?action=edit&type=user&id=<?= $donneeUsers["id"]; ?>"><i class="fas fa-pen"></i></td>
-        <td><a href="?action=edit&type=user&id=<?= $donneeUsers["id"]; ?>"><i class="fas fa-times"></i></td>
+		<td><a href="?action=edit&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-pen"></i></td>
+        <td><a href="?action=edit&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-times"></i></td>
         <?php } ?>
       </tr>
     <?php
@@ -24,29 +23,25 @@ function showUser(){
     $modifUser->closeCursor();
 }
 
-// Je place ici mes requetes Update et Delete vu que la page edit n'est pas encore créée...
-
-//Update.
-function updateUser(){
+function showLastConnected(){
 
     global $db;
-    $firstname = $lastname = $password = $email = $donneeUsers = "";
+    $req = $db->query('SELECT firstname, lastname FROM user WHERE last_connected > CURRENT_TIMESTAMP - 300 ');
 
-    $req = $db -> prepare("UPDATE user SET prenom = :firstname, nom = :lastname, pwd = :password, email = :email WHERE ID =".$donneeUsers["id"]."");
-    $req = execute(array(
-
-        'prenom' => $firstname,
-        'nom' => $lastname,
-        'pwd' => $password,
-        'email' => $email
-    ));
+    while ($lastConnected = $req->fetch()){
+    ?>
+        <li><?= $lastConnected["firstname"]; ?> <?= $lastConnected["lastname"]; ?></li>
+    <?php
+    }
+    $req->closeCursor();
 }
+
 // Delete
 function deleteUser(){
 
     global $db;
-    $donneeUsers = "";
+    $id = $_GET['id'];
 
-    $req = $db -> exec("DELETE FROM user WHERE ID = ".$donneeUsers["id"]."");
+    $req = $db->exec("DELETE FROM user WHERE id_user = ".$id);
 
 }

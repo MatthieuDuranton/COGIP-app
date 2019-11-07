@@ -52,7 +52,4 @@
     <div class="col-4">
         <h4><a href="?action=clients">Voir tous les clients</a></h4>
     </div>
-    <div class="col-4">
-        <h4><a href="?action=admin">Modifier les utilisateurs.</a></h4>
-    </div>
 </div>
