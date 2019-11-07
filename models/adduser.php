@@ -2,8 +2,8 @@
 
 global $db;
 
-$username_Err = $password_Err = $email_Err = $fname_Err = $lname_Err = "";
-$username = $password = $email = $fname = $lname = $send_success="";
+$username_Err = $password_Err = $email_Err = $fname_Err = $lname_Err = $role_Err = "";
+$username = $password = $email = $fname = $lname = $role = $send_success="";
 
 if ($_SERVER['REQUEST_METHOD']=="POST"){
 
@@ -23,10 +23,14 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     if (empty($lname = htmlspecialchars(strip_tags($_POST['lname'])))) {
         $lname_Err = "Merci d'indiquer un nom";
     };
+
+    if (empty($role = htmlspecialchars(strip_tags($_POST["role"])))){
+        $role_Err = "Il faut choisir un champ";
+    }
     
     //Demander pour le FK_role
 
-    if( $username_Err AND $password_Err AND $email_Err AND $fname_Err AND $lname_Err == ""){
+    if( $username_Err == "" AND $password_Err == "" AND $email_Err  == "" AND $fname_Err == "" AND $lname_Err == ""){
 
         $req = $db->prepare("INSERT INTO user( username, password, email, firstname, lastname, fk_role)
         VALUES (:username, :password, :email, :firstname, :lastname, :fk_role) ");
@@ -37,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
             'email' => $email,
             'firstname' => $fname,
             'lastname' => $lname,
+            'fk_role' => $role,
+
         ));
     }
     $send_success = "Le nouvel utilisateur a bien été ajouté";

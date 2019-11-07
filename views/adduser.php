@@ -39,9 +39,9 @@
                 </div>
 
                 <div class="form-group col-3">
-                  <label for="fk_role">Role</label>
-                  <select class="form-control" name="fk_role">
-                     
+                  <label for="role">Role</label>
+                  <select class="form-control" name="role">
+                    <?php fkOption('role','id_role, role_name'); ?>
                   </select>
                 </div>
 
