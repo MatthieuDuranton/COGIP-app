@@ -57,12 +57,12 @@ function edit($type) {
         $t5 = "";
         $t6 = "";
         //Récupérer les données de la société à changer
-        $companies = $db->query("SELECT company_name, vat, country.country_name AS country, type.type_name AS type FROM company INNER JOIN country ON company.fk_country = country.id_country INNER JOIN type ON company.fk_type = type.id_type WHERE id_company = $id");
+        $companies = $db->query("SELECT company_name, vat, fk_country, fk_type FROM company WHERE id_company = $id");
         while ($donneeCompanies = $companies->fetch()){
             $q1 = $donneeCompanies["company_name"];
             $q2 = $donneeCompanies["vat"];
-            $q3 = $donneeCompanies["country"];
-            $q4 = $donneeCompanies["type"];
+            $q3 = $donneeCompanies["fk_country"];
+            $q4 = $donneeCompanies["fk_type"];
             $q5 = "";
             $q6 = "";
         };
@@ -77,13 +77,13 @@ function edit($type) {
         $t5 = "";
         $t6 = "";
         //Récupérer les données du contact à changer
-        $people = $db->query("SELECT firstname, lastname, email, company.company_name AS company FROM people INNER JOIN company ON people.fk_company = company.id_company WHERE id_people = $id");
+        $people = $db->query("SELECT firstname, lastname, email, fk_company FROM people WHERE id_people = $id");
         while ($donneePeople = $people->fetch()){
             $q1 = $donneePeople["firstname"];
             $q2 = $donneePeople["lastname"];
-            $q3 = $donneePeople["company"];
-            $q4 = "";
-            $q5 = $donneePeople["email"];
+			$q3 = $donneePeople["email"];
+            $q4 = $donneePeople["company"];
+            $q5 = "";
             $q6 = "";
         };
         $people->closeCursor();
