@@ -14,7 +14,7 @@ function clients(){
         <td><?= $donneeClient["vat"]; ?></td>
         <td><?= $donneeClient["country"]; ?></td>
 		<?php if($role == 1){?>
-		<td><a href="?action=edit&type=company&id=<?= $donneeClient["id"]; ?>"><i class="fas fa-pen"></i></a></td>
+		<td><a href="?action=editClient&type=company&id=<?= $donneeClient["id"]; ?>"><i class="fas fa-pen"></i></a></td>
         <td><a href="?action=delete&type=company&id=<?= $donneeClient["id"]; ?>"><i class="fas fa-times"></i></a></td>
 		<?php } ?>
       </tr>

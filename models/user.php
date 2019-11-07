@@ -14,7 +14,7 @@ function showUser(){
         <td><?= $donneeUsers["lastname"]; ?></td>
         <td><?= $donneeUsers["email"]; ?></td>
         <?php if($role == 1){ ?>
-		<td><a href="?action=edit&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-pen"></i></td>
+		<td><a href="?action=editUser&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-pen"></i></td>
         <td><a href="?action=edit&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-times"></i></td>
         <?php } ?>
       </tr>
