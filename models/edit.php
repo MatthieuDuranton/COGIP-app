@@ -97,14 +97,14 @@ function edit($type) {
         $t5 = "Email";
         $t6 = "Niveau d'autorisation";
         //Récupérer les données du contact à changer
-        $user = $db->query("SELECT firstname, lastname, email, username, role.role_name AS role FROM user INNER JOIN role ON user.fk_role = role.role_name WHERE id_user = $id");
+        $user = $db->query("SELECT firstname, lastname, password, email, username, fk_role FROM user WHERE id_user = $id");
         while ($donneeUser = $user->fetch()){
             $q1 = $donneeUser["username"];
-            $q2 = "Password";
+            $q2 = $donneeUser["password"];
             $q3 = $donneeUser["firstname"];
             $q4 = $donneeUser["lastname"];
             $q5 = $donneeUser["email"];
-            $q6 = $donneeUser["role"];
+            $q6 = $donneeUser["fk_role"];
         };
         $user->closeCursor();
     };
