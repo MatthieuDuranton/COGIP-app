@@ -38,7 +38,13 @@
 			$column2 = $column[2];
 
 			while($result = $query->fetch(PDO::FETCH_ASSOC)){
-				echo '<option value="'.$result[$column0].'" '.($check == $result[$column0]) ? 'selected' : ' '.'>'.$result[$column1].' '.$result[$column2].'</option>';
+				if(!is_null($check) && $check == $result[$column0]){
+					$selected = "selected";
+				} else {
+					$selected = ' ';
+				}
+
+				echo '<option value="'.$result[$column0].'" '.$selected.'>'.$result[$column1].' '.$result[$column2].'</option>';
 			}
 		} else {
 			$column = explode(", ", $column);
@@ -46,7 +52,13 @@
 			$column1 = $column[1];
 
 			while($result = $query->fetch(PDO::FETCH_ASSOC)){
-				echo '<option value="'.$result[$column0].'" '.($check == $result[$column0]) ? 'selected' : ' '.'>'.$result[$column1].'</option>';
+				if(!is_null($check) && $check == $result[$column0]){
+					$selected = "selected";
+				} else {
+					$selected = ' ';
+				}
+
+				echo '<option value="'.$result[$column0].'" '.$selected.'>'.$result[$column1].'</option>';
 			}
 		}
 	}
