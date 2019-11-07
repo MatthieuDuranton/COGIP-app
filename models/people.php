@@ -15,7 +15,7 @@ function people(){
         <td><?= $donneePeople["email"]; ?></td>
         <td><?= $donneePeople["company"]; ?></td>
 		<?php if ($role == 1){?>
-		<td><a href="?action=edit&type=people&id=<?= $donneePeople["id"]; ?>"><i class="fas fa-pen"></i></a></td>
+		<td><a href="?action=editPeople&type=people&id=<?= $donneePeople["id"]; ?>"><i class="fas fa-pen"></i></a></td>
         <td><a href="?action=delete&type=people&id=<?= $donneePeople["id"]; ?>"><i class="fas fa-times"></i></a></td>
         <?php } ?>
       </tr>
