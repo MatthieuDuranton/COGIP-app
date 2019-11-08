@@ -29,4 +29,4 @@ Then we started coding :
     -   The details of the views
     -   The design
 
-![Screenshot](assets/img/Cogip_screenshot.png)
+![Screenshot](assets/images/Cogip_screenshot.png)
