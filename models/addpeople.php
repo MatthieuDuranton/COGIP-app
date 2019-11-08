@@ -1,7 +1,7 @@
 <?php
 global $role;
 
-if($role == 1){
+if($role == 1 || $role == 2){
 
 	global $db;
 

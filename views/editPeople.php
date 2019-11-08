@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="form-group col-12">
-			  <input type="submit" value="Envoyer" class="btn btn-primary btn-lg">
+			  <input type="submit" value="Envoyer" class="btn btn-lg">
 			</div>
 		  </div>
 		</form>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le :  lun. 04 nov. 2019 à 20:55
--- Version du serveur :  10.4.8-MariaDB
--- Version de PHP :  7.1.32
+-- Hôte : database:3306
+-- Généré le :  ven. 08 nov. 2019 à 15:13
+-- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
+-- Version de PHP :  7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,13 +35,6 @@ CREATE TABLE `company` (
   `fk_country` smallint(6) NOT NULL,
   `fk_type` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Déchargement des données de la table `company`
---
-
-INSERT INTO `company` (`id_company`, `company_name`, `vat`, `fk_country`, `fk_type`) VALUES
-(1, 'Proximus', 'BE0202.239.951', 21, 1);
 
 -- --------------------------------------------------------
 
@@ -313,13 +306,6 @@ CREATE TABLE `invoice` (
   `reference` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Déchargement des données de la table `invoice`
---
-
-INSERT INTO `invoice` (`id_invoice`, `fk_company`, `fk_people`, `invoice_date`, `reference`) VALUES
-(1, 1, 1, '2019-10-31', 'F20191001-001');
-
 -- --------------------------------------------------------
 
 --
@@ -333,13 +319,6 @@ CREATE TABLE `people` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `fk_company` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Déchargement des données de la table `people`
---
-
-INSERT INTO `people` (`id_people`, `firstname`, `lastname`, `email`, `fk_company`) VALUES
-(1, 'Sarah', 'Connor', 'sarah@connor.com', 1);
 
 -- --------------------------------------------------------
 
@@ -358,7 +337,8 @@ CREATE TABLE `role` (
 
 INSERT INTO `role` (`id_role`, `role_name`) VALUES
 (1, 'Admin'),
-(2, 'Modo');
+(2, 'Modo'),
+(3, 'Stagiaire');
 
 -- --------------------------------------------------------
 
@@ -401,7 +381,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `firstname`, `lastname`, `fk_role`, `last_connected`) VALUES
-(1, 'admin', '1234', 'grand-maitre@cogip.be', 'Jean-Christian', 'Ranu', 1, NULL);
+(1, 'Jean-Christian', '9770d1c99cd356280d7bb78b97bdbe4bf25ff1da', 'grand-maitre@cogip.be', 'Jean-Christian', 'Ranu', 1, '2019-11-08 15:12:34'),
+(2, 'Monica', '83787f060a59493aefdcd4b2369990e7303e186e', 'monica.levinski@clinton.com', 'Monica', 'Levinski', 2, '2019-11-08 14:54:15'),
+(3, 'Muriel', 'f2ff241eac83db641cadb1c8af3b0d8ca9fa7160', 'muriel.perrache@cogip.com', 'Muriel', 'Perrache', 2, NULL);
 
 --
 -- Index pour les tables déchargées
@@ -464,7 +446,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id_company` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_company` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `country`
@@ -476,19 +458,19 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT pour la table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_invoice` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `people`
 --
 ALTER TABLE `people`
-  MODIFY `id_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_people` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `type`
@@ -500,7 +482,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
