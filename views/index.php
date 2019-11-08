@@ -1,5 +1,5 @@
 
-<form method="post" action=""> 
+<form method="post" action="">
     <div class="row justify-content-center">
         <div class="form-group col-md-6">
             <label for="username">Nom d'utilisateur :</label>
@@ -21,7 +21,6 @@
         </div>
     </div>
     <div class="form-group text-center">
-        <input type="submit" name="send">
+        <input class="btn" type="submit" name="send">
     </div>
 </form>
-

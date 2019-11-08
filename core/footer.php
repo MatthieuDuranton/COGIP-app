@@ -4,6 +4,7 @@
 			<div class="row">
 				<div class="col-12">
 					<p class="text-center">Vive la COGIP</p>
+					<p class="text-center">Jean-Jacques de la Compta</p>
 				</div>
 			</div>
 		</div>

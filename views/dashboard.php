@@ -45,11 +45,11 @@
     </div>
 </div>
 
-<div class = "row text-center mt-4">
-    <div class="col-4">
+<div class="row text-center mt-4">
+    <div class="col-6">
         <h4><a href="?action=providers">Voir tous les fournisseurs</a></h4>
     </div>
-    <div class="col-4">
+    <div class="col-6">
         <h4><a href="?action=clients">Voir tous les clients</a></h4>
     </div>
 </div>

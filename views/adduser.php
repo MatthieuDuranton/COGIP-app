@@ -16,13 +16,13 @@
 
                 <div class="form-group col-3">
                   <label for="password">Mot de passe</label>
-                  <input class="form-control" type="text" name="password" placeholder="Mot de passe" value="<?php echo $password; ?>">
+                  <input class="form-control" type="password" name="password" placeholder="Mot de passe" value="<?php echo $password; ?>">
                   <span> <?php echo $password_Err;?></span>
                 </div>
 
                 <div class="form-group col-3">
                   <label for="email">Email</label>
-                  <input class="form-control" type="text" name="email" placeholder="E-mail" value="<?php echo $email; ?>">
+                  <input class="form-control" type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>">
                   <span> <?php echo $email_Err;?></span>
                 </div>
 
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group col-12">
-                  <input type="submit" value="Envoyer" class="btn btn-primary btn-lg">
+                  <input type="submit" value="Envoyer" class="btn btn-lg">
                 </div>
               </div>
             </form>

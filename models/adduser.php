@@ -3,7 +3,7 @@
 global $role;
 
 if($role == 1){
-	
+
 	global $db;
 
 	$username_Err = $password_Err = $email_Err = $fname_Err = $lname_Err = $role_Err = "";
@@ -36,6 +36,8 @@ if($role == 1){
 
 	    if( $username_Err == "" AND $password_Err == "" AND $email_Err  == "" AND $fname_Err == "" AND $lname_Err == ""){
 
+			$password = sha1(trim($password));
+			
 	        $req = $db->prepare("INSERT INTO user( username, password, email, firstname, lastname, fk_role)
 	        VALUES (:username, :password, :email, :firstname, :lastname, :fk_role) ");
 	        $req -> execute(array(

@@ -144,6 +144,8 @@ function update(){
 				    }
 
 				    if( $username_Err == "" AND $password_Err == "" AND $email_Err  == "" AND $fname_Err == "" AND $lname_Err == ""){
+						$password = sha1(trim($password));
+						
 				        $req = $db->prepare("UPDATE user SET username = :username, password = :password, email = :email, firstname = :firstname, lastname = :lastname, fk_role = :role WHERE id_user = :id");
 				        $req -> execute(array(
 				            'username' => $user_name,

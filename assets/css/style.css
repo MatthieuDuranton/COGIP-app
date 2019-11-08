@@ -4,9 +4,15 @@ html{
 body{
   height: 100%;
   background-color: aqua;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
 }
 main,footer{
  max-height: auto;
+}
+
+img {
+	max-width: 100%;
 }
 
 .form-group
@@ -21,15 +27,73 @@ label {
   font-weight: bold;
 }
 table{
-  border-width:5px;  
+  border-width:5px;
   border-style:groove;
 }
+
+.table td, .table th {
+	border-top: 3px black solid;
+}
+
 header{
-  border-width:5px;  
-  border-style:groove;
-  border-color:#9a9a9a;
+  border-width:5px;
+  border-style:outset;
+  border-color:grey;
+  margin-top: 15px;
+  padding: 15px;
+  color: white;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  margin-bottom: 30px;
 }
-a
-{
+
+a {
   color : brown;
+}
+
+header a {
+	color: white;
+	font-weight: bold;
+}
+
+h1 {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 100px;
+}
+
+input, input.form-control {
+	border-radius: 0px;
+	border-width: 5px;
+	border-style: inset;
+}
+
+select.form-control {
+	border-radius: 0px;
+	border-width: 5px;
+	border-style: inset;
+}
+
+.btn {
+	border-radius: 0px;
+	border-width: 5px;
+	border-style: outset;
+	border-color: rgba(0,0,0,.6);
+	background-color: rgba(0,0,0,.2);
+}
+
+.btn:hover {
+	background-color: rgba(255,255,255,.75);
+}
+
+.dropdown-menu {
+	border-style: outset;
+	border-width: 5px;
+	border-color: grey;
+}
+
+footer {
+	color: white;
+	background: rgb(64,64,64);
 }
