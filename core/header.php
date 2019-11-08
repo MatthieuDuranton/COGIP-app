@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?= $title; ?> - COGIP</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <main class="container">
-	<header>
+	<header class="text-center">
 		<h1>COGIP APP</h1>
 <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){ ?>
 		<ul class="nav justify-content-center">
@@ -92,7 +92,7 @@
 	<?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){ ?>
 	<div class="row">
 	    <div class="col-12">
-	        <h2><?php welcome(); ?></h2>
+	        <h2 class="text-center"><?php welcome(); ?></h2>
 	    </div>
 	</div>
 	<?php } ?>

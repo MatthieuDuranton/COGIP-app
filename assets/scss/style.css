@@ -1,13 +1,17 @@
-html{
+html {
   height: 100vh;
 }
-body{
+
+body {
   background-color: aqua;
+  color: white;
 }
+
 form {
-  border-width:5px;  
-  border-style:groove;
+  border-width: 5px;
+  border-style: groove;
 }
+
 h4 {
   margin-bottom: 30px;
 }
@@ -15,3 +19,4 @@ h4 {
 label {
   font-weight: bold;
 }
+/*# sourceMappingURL=style.css.map */

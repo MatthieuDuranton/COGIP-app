@@ -1,5 +1,6 @@
-<form method="post" action="">
-    <div class="row justify-content-center ">
+
+<form method="post" action=""> 
+    <div class="row justify-content-center">
         <div class="form-group col-md-6">
             <label for="username">Nom d'utilisateur :</label>
             <input type="text" class="form-control" name="username" placeholder="ex: Jean" value='<?php echo $username ?>'>
@@ -23,3 +24,4 @@
         <input type="submit" name="send">
     </div>
 </form>
+
