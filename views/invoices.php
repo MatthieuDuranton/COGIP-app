@@ -4,7 +4,7 @@
             <div class = text-center>
                 <h4>Factures</h4>
             </div>
-            <?php if($role == 1 OR 2){?>
+            <?php if($role == 1){?>
             <div class = text-center>
                 <h5><a href="?action=addinvoice">Ajouter une Facture</a></h5>
             </div>

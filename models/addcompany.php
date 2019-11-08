@@ -1,6 +1,9 @@
 <?php
+global $role;
 
-    $name_company = $vat = $country = $type = $send_success = "";
+if($role == 1){
+
+	$name_company = $vat = $country = $type = $send_success = "";
     $notfill_Err ="";
     global $db;
 
@@ -33,6 +36,10 @@
          $send_success ="La nouvelle société a bien été ajoutée";
          $name_company = $vat = $country = $type = "";
 
-    };
+	    };
 
-};
+	};
+
+} else {
+	header('location:?action=companies');
+}

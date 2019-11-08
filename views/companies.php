@@ -4,7 +4,7 @@
             <div class = text-center>
                 <h4>Sociétés</h4>
             </div>
-            <?php if($role == 1 OR 2){?>
+            <?php if($role == 1){?>
             <div class = text-center>
                 <h5><a href="?action=addcompany">Ajouter une Société</a></h5>
             </div>

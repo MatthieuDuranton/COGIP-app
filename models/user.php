@@ -1,47 +1,55 @@
 <?php
-//définir fonction client pour afficher ceux de la base de donnée
-function showUser(){
 
-    global $db;
-    global $role;
+global $role;
 
-    $modifUser = $db->query('SELECT * FROM user');
+if($role == 1){
+	//définir fonction client pour afficher ceux de la base de donnée
+	function showUser(){
 
-    while ($donneeUsers = $modifUser->fetch()){
-    ?>
-	<tr>
-        <td><?= $donneeUsers["firstname"]; ?></td>
-        <td><?= $donneeUsers["lastname"]; ?></td>
-        <td><?= $donneeUsers["email"]; ?></td>
-        <?php if($role == 1){ ?>
-		<td><a href="?action=editUser&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-pen"></i></td>
-        <td><a href="?action=edit&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-times"></i></td>
-        <?php } ?>
-      </tr>
-    <?php
-    }
-    $modifUser->closeCursor();
-}
+	    global $db;
+	    global $role;
 
-function showLastConnected(){
+	    $modifUser = $db->query('SELECT * FROM user');
 
-    global $db;
-    $req = $db->query('SELECT firstname, lastname FROM user WHERE last_connected > CURRENT_TIMESTAMP - 300 ');
+	    while ($donneeUsers = $modifUser->fetch()){
+	    ?>
+		<tr>
+	        <td><?= $donneeUsers["firstname"]; ?></td>
+	        <td><?= $donneeUsers["lastname"]; ?></td>
+	        <td><?= $donneeUsers["email"]; ?></td>
+	        <?php if($role == 1){ ?>
+			<td><a href="?action=editUser&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-pen"></i></td>
+	        <td><a href="?action=edit&type=user&id=<?= $donneeUsers["id_user"]; ?>"><i class="fas fa-times"></i></td>
+	        <?php } ?>
+	      </tr>
+	    <?php
+	    }
+	    $modifUser->closeCursor();
+	}
 
-    while ($lastConnected = $req->fetch()){
-    ?>
-        <li><?= $lastConnected["firstname"]; ?> <?= $lastConnected["lastname"]; ?></li>
-    <?php
-    }
-    $req->closeCursor();
-}
+	function showLastConnected(){
 
-// Delete
-function deleteUser(){
+	    global $db;
+	    $req = $db->query('SELECT firstname, lastname FROM user WHERE last_connected > CURRENT_TIMESTAMP - 300 ');
 
-    global $db;
-    $id = $_GET['id'];
+	    while ($lastConnected = $req->fetch()){
+	    ?>
+	        <li><?= $lastConnected["firstname"]; ?> <?= $lastConnected["lastname"]; ?></li>
+	    <?php
+	    }
+	    $req->closeCursor();
+	}
 
-    $req = $db->exec("DELETE FROM user WHERE id_user = ".$id);
+	// Delete
+	function deleteUser(){
 
+	    global $db;
+	    $id = $_GET['id'];
+
+	    $req = $db->exec("DELETE FROM user WHERE id_user = ".$id);
+
+	}
+	
+} else {
+	header('location:?action=dashboard');
 }
