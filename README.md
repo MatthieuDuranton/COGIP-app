@@ -1,5 +1,8 @@
 # COGIP - A company for winners... -
 
+## Link to the project
+[Click here to access to the COGIP APP](http://nassimkoceir.be/cogip/)
+
 ## Project display
 
 "The COGIP is a company which we don’t know an all lot about apart that they produce Jean-Michel toys and do Pokemon exchange. They also have incredible employees within their rank."
