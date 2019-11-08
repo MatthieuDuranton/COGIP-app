@@ -5,7 +5,7 @@ function connection($username, $password){
 
     if ($_SERVER['REQUEST_METHOD']=="POST"){
 		$username = htmlspecialchars(strip_tags($username));
-		$password = trim($password);
+		$password = sha1(trim($password));
 
 		global $username_empty, $password_empty, $username_err, $session_err;
 
