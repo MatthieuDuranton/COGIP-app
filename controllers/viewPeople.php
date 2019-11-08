@@ -1,7 +1,7 @@
 <?php
 	require('models/viewPeople.php');
 
-	$title = "Contact - ".$firstname." ".$lastname;
+	$title = "Contact - ".$dataPeople['firstname']." ".$dataPeople['lastname'];
 	require('core/header.php');
 	require('views/viewPeople.php');
 	require('core/footer.php');
