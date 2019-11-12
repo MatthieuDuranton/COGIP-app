@@ -39,7 +39,7 @@
 * Nassim who was more at ease let his coworkers do as much as they could, helping to debug or to move forward before they felt discouraged. We were all glad he did so
 * We were done in time despite some individuals constraints 
 
-![Screenshot](assets/images/Cogip_screenshot.png)
+![Screenshot](assets/image/Cogip_screenshot.png)
 
 
 
