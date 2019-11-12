@@ -37,7 +37,7 @@
 ### Planarization and feelings:
 * We spent 2 to 3 days understanding MVC. We were glad to do so because the coding was then easier
 * Nassim who was more at ease let his coworkers do as much as they could, helping to debug or to move forward before they felt discouraged. We were all glad he did so
-* We were done in time depsite some individuals constraints 
+* We were done in time despite some individuals constraints 
 
 ![Screenshot](assets/images/Cogip_screenshot.png)
 
