@@ -23,11 +23,11 @@
 * MVC
 
 ### Website and GitHub :
-* Our Github's pages
-# https://github.com/nassimkoceir
-# https://github.com/arnaud-vanderschriek
-# https://github.com/MatthieuDuranton/COGIP-app (code here)
-* Website
+#### Our Github's pages
+* https://github.com/nassimkoceir
+* https://github.com/arnaud-vanderschriek
+* https://github.com/MatthieuDuranton/COGIP-app (code here)
+#### Website
 [Click here to access to the COGIP APP](http://nassimkoceir.be/cogip/)
 
 ### Specificities:
