@@ -1,32 +1,47 @@
-# COGIP - A company for winners... -
+# Cogip exercise
 
-## Link to the project
+### Goals:
+* Train to work in group on a "long term project" of a fortnight
+* Improve our PHP's skills
+* Improve our SQL's skills
+* Discover, understand and use the MVC method
+* Learn how to deploy the website online
+* Provide a secured website with admin or modo accesses
+
+### Context:
+* third training month
+* First collaboration between the team members
+* We knew nothing of MVC
+
+### Langages and framework :
+* HTML
+* SASS and CSS
+* Bootstrap
+* PHP
+* PHP myadmin
+* MySQL
+* MVC
+
+### Website and GitHub :
+* Our Github's pages
+# https://github.com/nassimkoceir
+# https://github.com/arnaud-vanderschriek
+# https://github.com/MatthieuDuranton/COGIP-app (code here)
+* Website
 [Click here to access to the COGIP APP](http://nassimkoceir.be/cogip/)
 
-## Project display
+### Specificities:
+* Responsive website
+* We had a lot of fun in designing the website following windows 95 aesthetic
 
-"The COGIP is a company which we don’t know an all lot about apart that they produce Jean-Michel toys and do Pokemon exchange. They also have incredible employees within their rank."
-
-"Jean-Christian Ranu works in accounting at the COGIP. He has been using an old, ugly and incomplete software for years, making him go between it and excels sheet. Jean-Christian like paella, crosswords and his coworker Muriel Perrache."
-
-What the .... is this project presentation ^^
-
-
-The goal of this project is to increase our knowledge of php, connection to databases and teamwork.
-
-## Progress of the project
-
-We started with an understanding of the MVC model in php, apart from Nassim, Mathieu and I were not the most comfortable with it.
-
-Then we started with the database and what we needed.
-
-Then we started coding :
-
-    -   We did the router first
-    -   A first page of connection as well as the dashboard
-    -   The lists
-    -   Functions (add, edit, del)
-    -   The details of the views
-    -   The design
+### Planarization and feelings:
+* We spent 2 to 3 days understanding MVC. We were glad to do so because the coding was then easier
+* Nassim who was more at ease let his coworkers do as much as they could, helping to debug or to move forward before they felt discouraged. We were all glad he did so
+* We were done in time depsite some individuals constraints 
 
 ![Screenshot](assets/images/Cogip_screenshot.png)
+
+
+
+
+
