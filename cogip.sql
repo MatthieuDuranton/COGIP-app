@@ -381,9 +381,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `firstname`, `lastname`, `fk_role`, `last_connected`) VALUES
-(1, 'Jean-Christian', '9770d1c99cd356280d7bb78b97bdbe4bf25ff1da', 'grand-maitre@cogip.be', 'Jean-Christian', 'Ranu', 1, '2019-11-08 15:12:34'),
-(2, 'Monica', '83787f060a59493aefdcd4b2369990e7303e186e', 'monica.levinski@clinton.com', 'Monica', 'Levinski', 2, '2019-11-08 14:54:15'),
-(3, 'Muriel', 'f2ff241eac83db641cadb1c8af3b0d8ca9fa7160', 'muriel.perrache@cogip.com', 'Muriel', 'Perrache', 2, NULL);
+(1, 'Jean-Christian', '9770d1c99cd356280d7bb78b97bdbe4bf25ff1da', 'grand-maitre@cogip.be', 'Jean-Christian', 'Ranu', 1, NULL),
+(2, 'Muriel', 'f2ff241eac83db641cadb1c8af3b0d8ca9fa7160', 'muriel.perrache@cogip.com', 'Muriel', 'Perrache', 2, NULL);
 
 --
 -- Index pour les tables déchargées
